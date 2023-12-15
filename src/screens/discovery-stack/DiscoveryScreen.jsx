@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-const DiscoveryScreenComponent = (props) => {
+const DiscoveryScreen = (props) => {
     return (
         <SafeAreaProvider>
             <View>
@@ -11,4 +11,4 @@ const DiscoveryScreenComponent = (props) => {
     );
 };
 
-export default DiscoveryScreenComponent;
+export default DiscoveryScreen;
