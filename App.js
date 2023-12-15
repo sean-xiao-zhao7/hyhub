@@ -1,5 +1,10 @@
-import DiscoveryScreenComponent from "./src/components/DiscoveryScreenComponent";
+import { NavigationContainer } from "@react-navigation/native";
+import MainBottomTabNavigator from "./src/MainBottomTabNavigator";
 
 export default function App() {
-    return <DiscoveryScreenComponent />;
+    return (
+        <NavigationContainer>
+            <MainBottomTabNavigator />
+        </NavigationContainer>
+    );
 }
