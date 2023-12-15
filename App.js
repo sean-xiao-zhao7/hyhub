@@ -1,5 +1,5 @@
-import HomeScreenComponent from "./src/components/HomeScreenComponent";
+import DiscoveryScreenComponent from "./src/components/DiscoveryScreenComponent";
 
 export default function App() {
-    return <HomeScreenComponent />;
+    return <DiscoveryScreenComponent />;
 }
