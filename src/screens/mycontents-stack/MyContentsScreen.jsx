@@ -1,14 +1,15 @@
 import { View, Text } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import mainScreenStyle from "../styles/mainScreenStyle";
 
 const MyContentsScreen = () => {
     return (
-        <SafeAreaProvider>
+        <SafeAreaView>
             <View style={mainScreenStyle}>
                 <Text>MyContents Screen</Text>
             </View>
-        </SafeAreaProvider>
+        </SafeAreaView>
     );
 };
 
