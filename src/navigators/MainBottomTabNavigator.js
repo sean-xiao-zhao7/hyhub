@@ -8,21 +8,12 @@ const MainBottomTabNav = createBottomTabNavigator();
 
 export default function MainBottomTabNavigator() {
     return (
-        <MainBottomTabNav.Navigator
-            screenOptions={noHeaderOptions}
-            sceneContainerStyle={{
-                backgroundColor: "white",
-            }}
-        >
+        <MainBottomTabNav.Navigator screenOptions={noHeaderOptions}>
             <MainBottomTabNav.Screen
                 name="DiscoveryTabStackNavigator"
                 component={DiscoveryTabStackNavigator}
                 options={{
-                    headerMode: "screen",
                     title: "Discover",
-                    cardStyle: {
-                        backgroundColor: "white",
-                    },
                 }}
             />
             <MainBottomTabNav.Screen
@@ -30,7 +21,6 @@ export default function MainBottomTabNavigator() {
                 component={MyContentsTabStackNavigator}
                 options={{
                     title: "Me",
-                    backgroundColor: "white",
                 }}
             />
         </MainBottomTabNav.Navigator>
