@@ -1,10 +1,10 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
 
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
 import noHeaderOptions from "./options/noHeader";
 
-const MainBottomTabNav = createBottomTabNavigator();
+const MainBottomTabNav = createMaterialBottomTabNavigator();
 
 export default function MainBottomTabNavigator() {
     return (
