@@ -14,7 +14,13 @@ export default function MainBottomTabNavigator() {
             screenOptions={noHeaderOptions}
             activeColor={colors.mainColor}
             inactiveColor={colors.secondColor}
-            barStyle={{ backgroundColor: colors.backgroundColor }}
+            barStyle={{
+                backgroundColor: colors.backgroundColor,
+                // shadowColor: colors.borderColor,
+                // shadowOffset: { width: 1, height: 1 },
+                // shadowRadius: 5,
+                // shadowOpacity: 1,
+            }}
         >
             <MainBottomTabNav.Screen
                 name="DiscoveryTabStackNavigator"
@@ -25,7 +31,7 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="fire"
                             color={color}
-                            size={34}
+                            size={32}
                         />
                     ),
                 }}
@@ -39,7 +45,7 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="heart"
                             color={color}
-                            size={34}
+                            size={32}
                         />
                     ),
                 }}
