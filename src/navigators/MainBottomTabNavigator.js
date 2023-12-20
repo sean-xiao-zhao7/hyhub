@@ -1,4 +1,5 @@
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
@@ -14,13 +15,27 @@ export default function MainBottomTabNavigator() {
                 component={DiscoveryTabStackNavigator}
                 options={{
                     title: "Discover",
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons
+                            name="fire"
+                            color={color}
+                            size={26}
+                        />
+                    ),
                 }}
             />
             <MainBottomTabNav.Screen
                 name="MyContentsTabStackNavigator"
                 component={MyContentsTabStackNavigator}
                 options={{
-                    title: "Me",
+                    title: "My Contents",
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons
+                            name="heart"
+                            color={color}
+                            size={26}
+                        />
+                    ),
                 }}
             />
         </MainBottomTabNav.Navigator>
