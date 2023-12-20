@@ -1,14 +1,25 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
+import colors from "../../styles/colors";
 
 const DiscoveryScreen = () => {
     return (
         <SafeAreaView>
-            <View style={mainScreenStyle}>
-                <Text>Discovery Screen</Text>
-            </View>
+            <ScrollView style={mainScreenStyle}>
+                <View style={{ alignItems: "center", flexDirection: "row" }}>
+                    <MaterialCommunityIcons
+                        name="fire"
+                        size={32}
+                        color={colors.mainColor}
+                    />
+                    <Text style={{ fontSize: 20 }}>
+                        Discover what's around you.
+                    </Text>
+                </View>
+            </ScrollView>
         </SafeAreaView>
     );
 };
