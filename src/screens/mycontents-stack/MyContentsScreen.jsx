@@ -1,6 +1,7 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Button, Text, Divider } from "react-native-paper";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
@@ -17,6 +18,14 @@ const MyContentsScreen = () => {
                     />
                     <Text style={{ fontSize: 20 }}>My Contents</Text>
                 </View>
+                <Divider style={{ paddingVertical: 5 }} />
+                <Button
+                    icon="plus"
+                    mode="contained"
+                    onPress={() => console.log("Pressed")}
+                >
+                    Add your event, service, etc.
+                </Button>
             </ScrollView>
         </SafeAreaView>
     );

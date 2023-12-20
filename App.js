@@ -3,6 +3,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PaperProvider, DefaultTheme } from "react-native-paper";
 
 import MainBottomTabNavigator from "./src/navigators/MainBottomTabNavigator";
+import colors from "./src/styles/colors";
 
 const theme = {
     ...DefaultTheme,
