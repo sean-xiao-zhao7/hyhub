@@ -4,12 +4,18 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
 import noHeaderOptions from "./options/noHeader";
+import colors from "../styles/colors";
 
 const MainBottomTabNav = createMaterialBottomTabNavigator();
 
 export default function MainBottomTabNavigator() {
     return (
-        <MainBottomTabNav.Navigator screenOptions={noHeaderOptions}>
+        <MainBottomTabNav.Navigator
+            screenOptions={noHeaderOptions}
+            activeColor={colors.mainColor}
+            inactiveColor={colors.secondColor}
+            barStyle={{ backgroundColor: colors.backgroundColor }}
+        >
             <MainBottomTabNav.Screen
                 name="DiscoveryTabStackNavigator"
                 component={DiscoveryTabStackNavigator}
@@ -19,7 +25,7 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="fire"
                             color={color}
-                            size={26}
+                            size={34}
                         />
                     ),
                 }}
@@ -33,7 +39,7 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="heart"
                             color={color}
-                            size={26}
+                            size={34}
                         />
                     ),
                 }}
