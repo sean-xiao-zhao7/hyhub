@@ -1,10 +1,11 @@
 import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Button, Text, Divider } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
+import MyDivider from "../../components/MyDivder";
 
 const MyContentsScreen = () => {
     return (
@@ -18,11 +19,11 @@ const MyContentsScreen = () => {
                     />
                     <Text style={{ fontSize: 20 }}>My Contents</Text>
                 </View>
-                <Divider style={{ paddingVertical: 5 }} />
+                <MyDivider />
                 <Button
                     icon="plus"
                     mode="contained"
-                    onPress={() => console.log("Pressed")}
+                    onPress={() => console.log("Adding an event.")}
                 >
                     Add your event, service, etc.
                 </Button>
