@@ -14,6 +14,10 @@ const AddContentScreen = ({ navigation }) => {
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
 
+    const addContent = () => {
+        navigation.goBack();
+    };
+
     return (
         <SafeAreaView>
             <ScrollView style={mainScreenStyle}>
@@ -72,10 +76,7 @@ const AddContentScreen = ({ navigation }) => {
                     />
                     <MyDivider />
                     <MyDivider />
-                    <Button
-                        mode="contained"
-                        onPress={() => navigation.goBack()}
-                    >
+                    <Button mode="contained" onPress={() => addContent()}>
                         Add
                     </Button>
                 </View>
