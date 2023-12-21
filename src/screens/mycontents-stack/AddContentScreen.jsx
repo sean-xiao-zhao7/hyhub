@@ -24,7 +24,7 @@ const AddContentScreen = ({ navigation }) => {
 
     const addContent = () => {
         const newContent = new Content(title, date, address, description);
-        dispatch(addContentAction(newContent));
+        dispatch(addContentAction({ newContent: newContent }));
         navigation.goBack();
     };
 

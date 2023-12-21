@@ -7,3 +7,5 @@ class Content {
         this.description = description;
     }
 }
+
+export default Content;
