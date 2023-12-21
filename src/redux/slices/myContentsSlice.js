@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const counterSlice = createSlice({
+const myContentsSlice = createSlice({
     name: "myContents",
     initialState: {
         contents: [],
     },
     reducers: {
-        addContent: (state, action) => {
+        addContentAction: (state, action) => {
             state.contents.push(action.payload.newContent);
         },
-        removeContent: (state, action) => {
+        removeContentAction: (state, action) => {
             state.contents.filter(
                 (content) => content.id !== action.payload.newContent.id
             );
@@ -17,4 +17,6 @@ const counterSlice = createSlice({
     },
 });
 
-export const { addContent, removeContent } = counterSlice.actions;
+export const { addContentAction, removeContentAction } =
+    myContentsSlice.actions;
+export default myContentsSlice;

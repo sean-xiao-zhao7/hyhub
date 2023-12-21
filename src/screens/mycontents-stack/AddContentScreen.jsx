@@ -1,20 +1,30 @@
 import { useState } from "react";
+
 import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Button, Text, TextInput } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+
+import { useDispatch } from "react-redux";
+import { addContentAction } from "../../redux/slices/myContentsSlice";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
+
 import MyDivider from "../../components/MyDivder";
+import Content from "../../models/content";
 
 const AddContentScreen = ({ navigation }) => {
+    const dispatch = useDispatch();
+
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
 
     const addContent = () => {
+        const newContent = new Content(title, date, address, description);
+        dispatch(addContentAction(newContent));
         navigation.goBack();
     };
 
