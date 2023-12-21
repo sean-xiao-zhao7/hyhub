@@ -23,8 +23,14 @@ const AddContentScreen = ({ navigation }) => {
     const [description, setDescription] = useState("");
 
     const addContent = () => {
-        const newContent = new Content(title, date, address, description);
-        dispatch(addContentAction({ newContent: newContent }));
+        dispatch(
+            addContentAction({
+                title,
+                date,
+                address,
+                description,
+            })
+        );
         navigation.goBack();
     };
 

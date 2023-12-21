@@ -1,6 +1,6 @@
 class Content {
     constructor(title, date, address, description) {
-        this.id = new Date().toDateString();
+        this.id = new Date().toISOString(true);
         this.title = title;
         this.date = date;
         this.address = address;

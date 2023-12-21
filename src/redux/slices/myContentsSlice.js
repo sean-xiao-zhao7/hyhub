@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Content from "../../models/content";
 
 const myContentsSlice = createSlice({
     name: "myContents",
@@ -7,7 +8,13 @@ const myContentsSlice = createSlice({
     },
     reducers: {
         addContentAction: (state, action) => {
-            state.contents.push(action.payload.newContent);
+            const newContent = new Content(
+                action.payload.title,
+                action.payload.date,
+                action.payload.address,
+                action.payload.description
+            );
+            state.contents.push(JSON.stringify(newContent));
         },
         removeContentAction: (state, action) => {
             state.contents.filter(

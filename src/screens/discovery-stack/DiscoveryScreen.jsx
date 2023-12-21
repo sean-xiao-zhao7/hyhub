@@ -27,7 +27,7 @@ const DiscoveryScreen = () => {
                 </View>
                 {contents.map((content) => {
                     return (
-                        <View>
+                        <View key={content.id}>
                             <Text>{content.title}</Text>
                         </View>
                     );
