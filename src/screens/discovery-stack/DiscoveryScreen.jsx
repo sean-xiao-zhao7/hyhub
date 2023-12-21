@@ -25,13 +25,15 @@ const DiscoveryScreen = () => {
                         Discover what's around you.
                     </Text>
                 </View>
-                {contents.map((content) => {
-                    return (
-                        <View key={content.id}>
-                            <Text>{content.title}</Text>
-                        </View>
-                    );
-                })}
+                <View>
+                    {contents.map((content) => {
+                        return (
+                            <View key={content.id}>
+                                <Text>{content.title}</Text>
+                            </View>
+                        );
+                    })}
+                </View>
             </ScrollView>
         </SafeAreaView>
     );

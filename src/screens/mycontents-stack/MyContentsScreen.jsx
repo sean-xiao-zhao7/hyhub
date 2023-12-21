@@ -7,7 +7,13 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
 
+import { useSelector } from "react-redux";
+
 const MyContentsScreen = ({ navigation }) => {
+    const contents = useSelector((state) => {
+        return state.myContents.contents.map((content) => JSON.parse(content));
+    });
+
     return (
         <SafeAreaView>
             <ScrollView style={mainScreenStyle}>
@@ -27,6 +33,15 @@ const MyContentsScreen = ({ navigation }) => {
                 >
                     Add your event, service, etc.
                 </Button>
+                <View>
+                    {contents.map((content) => {
+                        return (
+                            <View key={content.id}>
+                                <Text>{content.title}</Text>
+                            </View>
+                        );
+                    })}
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
