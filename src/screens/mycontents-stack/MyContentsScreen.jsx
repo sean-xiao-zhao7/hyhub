@@ -7,7 +7,7 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
 
-const MyContentsScreen = () => {
+const MyContentsScreen = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView style={mainScreenStyle}>
@@ -23,7 +23,7 @@ const MyContentsScreen = () => {
                 <Button
                     icon="plus"
                     mode="contained"
-                    onPress={() => console.log("Adding an event.")}
+                    onPress={() => navigation.navigate("AddContentScreen")}
                 >
                     Add your event, service, etc.
                 </Button>
