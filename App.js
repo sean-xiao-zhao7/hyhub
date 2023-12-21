@@ -9,6 +9,8 @@ const theme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
+        primary: colors.mainColor,
+        secondary: colors.secondColor,
         secondaryContainer: "transparent", // Use transparent to disable the little highlighting oval
     },
 };
