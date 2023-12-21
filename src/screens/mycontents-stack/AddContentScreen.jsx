@@ -42,38 +42,35 @@ const AddContentScreen = ({ navigation }) => {
                     </Button>
                 </View>
                 <MyDivider />
-                <View>
-                    <Text>Full Title</Text>
+                <View style={{ paddingHorizontal: 5 }}>
                     <MyDivider />
                     <TextInput
-                        label="Title"
+                        label="Full Title"
                         value={title}
                         onChangeText={(text) => setTitle(text)}
                     />
                     <MyDivider />
-                    <Text>Date (if applicable)</Text>
                     <MyDivider />
                     <TextInput
-                        label="Date"
+                        label="Date (if applicable)"
                         value={date}
                         onChangeText={(text) => setDate(text)}
                     />
                     <MyDivider />
-                    <Text>Address / Location / Online</Text>
                     <MyDivider />
                     <TextInput
-                        label="Address"
+                        label="Address / Location / Online"
                         value={address}
                         onChangeText={(text) => setAddress(text)}
                     />
                     <MyDivider />
-                    <Text>Full Description / Details</Text>
                     <MyDivider />
                     <TextInput
-                        label="Description"
+                        label="Full Description / Details"
                         value={description}
                         onChangeText={(text) => setDescription(text)}
                     />
+                    <MyDivider />
                     <MyDivider />
                     <Button
                         mode="contained"
