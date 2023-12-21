@@ -5,7 +5,9 @@ import { Button, Text } from "react-native-paper";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
+
 import MyDivider from "../../components/MyDivder";
+import ContentPreview from "../../components/ContentPreview";
 
 import { useSelector } from "react-redux";
 
@@ -36,8 +38,17 @@ const MyContentsScreen = ({ navigation }) => {
                 <View>
                     {contents.map((content) => {
                         return (
-                            <View key={content.id}>
-                                <Text>{content.title}</Text>
+                            <View>
+                                <MyDivider />
+                                <MyDivider />
+                                <ContentPreview
+                                    key={content.id}
+                                    id={content.id}
+                                    title={content.title}
+                                    content={content.date}
+                                    address={content.address}
+                                    description={content.description}
+                                />
                             </View>
                         );
                     })}
