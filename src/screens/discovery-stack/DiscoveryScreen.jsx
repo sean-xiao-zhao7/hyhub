@@ -10,7 +10,9 @@ import colors from "../../styles/colors";
 import { useSelector } from "react-redux";
 
 const DiscoveryScreen = () => {
-    const contents = useSelector((state) => state.myContents.contents);
+    const contents = useSelector((state) => {
+        return state.myContents.contents;
+    });
 
     return (
         <SafeAreaView>
@@ -27,9 +29,10 @@ const DiscoveryScreen = () => {
                 </View>
                 <View>
                     {contents.map((content) => {
+                        const classContent = JSON.parse(content);
                         return (
-                            <View key={content.id}>
-                                <Text>{content.title}</Text>
+                            <View key={classContent.id}>
+                                <Text>{classContent.title}</Text>
                             </View>
                         );
                     })}

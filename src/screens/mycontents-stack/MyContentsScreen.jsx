@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 
 const MyContentsScreen = ({ navigation }) => {
     const contents = useSelector((state) => {
-        return state.myContents.contents.map((content) => JSON.parse(content));
+        return state.myContents.contents;
     });
 
     return (
@@ -37,17 +37,18 @@ const MyContentsScreen = ({ navigation }) => {
                 </Button>
                 <View>
                     {contents.map((content) => {
+                        const classContent = JSON.parse(content);
                         return (
                             <View>
                                 <MyDivider />
                                 <MyDivider />
                                 <ContentPreview
-                                    key={content.id}
-                                    id={content.id}
-                                    title={content.title}
-                                    content={content.date}
-                                    address={content.address}
-                                    description={content.description}
+                                    key={classContent.id}
+                                    id={classContent.id}
+                                    title={classContent.title}
+                                    content={classContent.date}
+                                    address={classContent.address}
+                                    description={classContent.description}
                                 />
                             </View>
                         );
