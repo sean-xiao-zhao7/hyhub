@@ -17,8 +17,8 @@ const MyContentsScreen = ({ navigation }) => {
     });
 
     return (
-        <SafeAreaView>
-            <ScrollView style={mainScreenStyle}>
+        <SafeAreaView style={{ flex: 1 }}>
+            <ScrollView contentContainerStyle={mainScreenStyle}>
                 <View style={{ alignItems: "center", flexDirection: "row" }}>
                     <MaterialCommunityIcons
                         name="fire"
@@ -39,11 +39,10 @@ const MyContentsScreen = ({ navigation }) => {
                     {contents.map((content) => {
                         const classContent = JSON.parse(content);
                         return (
-                            <View>
+                            <View key={classContent.id}>
                                 <MyDivider />
                                 <MyDivider />
                                 <ContentPreview
-                                    key={classContent.id}
                                     id={classContent.id}
                                     title={classContent.title}
                                     content={classContent.date}

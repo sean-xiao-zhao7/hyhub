@@ -35,7 +35,7 @@ const AddContentScreen = ({ navigation }) => {
     };
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
             <ScrollView style={mainScreenStyle}>
                 <View
                     style={{

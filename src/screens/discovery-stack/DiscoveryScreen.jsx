@@ -9,14 +9,17 @@ import colors from "../../styles/colors";
 
 import { useSelector } from "react-redux";
 
+import ContentPreview from "../../components/ContentPreview";
+import MyDivider from "../../components/MyDivder";
+
 const DiscoveryScreen = () => {
     const contents = useSelector((state) => {
         return state.myContents.contents;
     });
 
     return (
-        <SafeAreaView>
-            <ScrollView style={mainScreenStyle}>
+        <SafeAreaView style={{ flex: 1 }}>
+            <ScrollView contentContainerStyle={mainScreenStyle}>
                 <View style={{ alignItems: "center", flexDirection: "row" }}>
                     <MaterialCommunityIcons
                         name="fire"
@@ -32,7 +35,15 @@ const DiscoveryScreen = () => {
                         const classContent = JSON.parse(content);
                         return (
                             <View key={classContent.id}>
-                                <Text>{classContent.title}</Text>
+                                <MyDivider />
+                                <MyDivider />
+                                <ContentPreview
+                                    id={classContent.id}
+                                    title={classContent.title}
+                                    content={classContent.date}
+                                    address={classContent.address}
+                                    description={classContent.description}
+                                />
                             </View>
                         );
                     })}
