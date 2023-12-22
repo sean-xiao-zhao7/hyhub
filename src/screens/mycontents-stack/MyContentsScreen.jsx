@@ -21,8 +21,8 @@ const MyContentsScreen = ({ navigation }) => {
             <ScrollView contentContainerStyle={mainScreenStyle}>
                 <View style={{ alignItems: "center", flexDirection: "row" }}>
                     <MaterialCommunityIcons
-                        name="fire"
-                        size={32}
+                        name="diamond-stone"
+                        size={30}
                         color={colors.mainColor}
                     />
                     <Text style={{ fontSize: 20 }}>My Contents</Text>

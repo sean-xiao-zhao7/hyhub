@@ -19,8 +19,19 @@ const DiscoveryScreen = () => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <ScrollView contentContainerStyle={mainScreenStyle}>
-                <View style={{ alignItems: "center", flexDirection: "row" }}>
+            <ScrollView
+                contentContainerStyle={{
+                    ...mainScreenStyle,
+                    paddingHorizontal: 0,
+                }}
+            >
+                <View
+                    style={{
+                        alignItems: "center",
+                        flexDirection: "row",
+                        paddingHorizontal: 10,
+                    }}
+                >
                     <MaterialCommunityIcons
                         name="fire"
                         size={32}
@@ -30,13 +41,13 @@ const DiscoveryScreen = () => {
                         Discover what's around you.
                     </Text>
                 </View>
+                <MyDivider />
+                <MyDivider />
                 <View>
                     {contents.map((content) => {
                         const classContent = JSON.parse(content);
                         return (
                             <View key={classContent.id}>
-                                <MyDivider />
-                                <MyDivider />
                                 <ContentPreview
                                     id={classContent.id}
                                     title={classContent.title}
@@ -44,6 +55,8 @@ const DiscoveryScreen = () => {
                                     address={classContent.address}
                                     description={classContent.description}
                                 />
+                                <MyDivider />
+                                <MyDivider />
                             </View>
                         );
                     })}

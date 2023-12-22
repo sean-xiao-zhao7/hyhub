@@ -12,7 +12,6 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
-import Content from "../../models/content";
 
 const AddContentScreen = ({ navigation }) => {
     const dispatch = useDispatch();

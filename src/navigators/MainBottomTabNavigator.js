@@ -43,7 +43,7 @@ export default function MainBottomTabNavigator() {
                     title: "My Contents",
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
-                            name="heart"
+                            name="diamond-stone"
                             color={color}
                             size={32}
                         />
