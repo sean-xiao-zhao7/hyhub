@@ -8,16 +8,18 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             style={{
                 borderRadius: 0,
                 borderTopWidth: 1,
-                borderTopColor: colors.backgroundColorGrayLight,
-                
+                borderTopColor: colors.mainColor,
             }}
         >
-            <Card.Title title={title} titleStyle={{ fontSize: 20 }} />
+            <Card.Title
+                title={title}
+                titleStyle={{ fontSize: 20, paddingVertical: 20 }}
+            />
             <Card.Cover
                 source={{ uri: "https://picsum.photos/700" }}
-                style={{ borderRadius: 0, height: 350 }}
+                style={{ borderRadius: 0, height: 300 }}
             />
-            <Card.Content style={{ marginHorizontal: 5, marginTop: 10 }}>
+            <Card.Content style={{ marginTop: 15 }}>
                 {description ? (
                     <Text style={{ fontSize: 16 }}>{description}</Text>
                 ) : (

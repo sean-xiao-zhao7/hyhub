@@ -38,7 +38,7 @@ const DiscoveryScreen = () => {
                         color={colors.mainColor}
                     />
                     <Text style={{ fontSize: 20 }}>
-                        Discover what's around you.
+                        Discover gems around you.
                     </Text>
                 </View>
                 <MyDivider />
