@@ -6,20 +6,25 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
         <Card
             mode="contained"
             style={{
-                backgroundColor: colors.backgroundColorGrayLight,
                 borderRadius: 0,
-            }}
-            contentStyle={{
-                paddingVertical: 10,
+                borderBottomWidth: 1,
+                borderBottomColor: colors.backgroundColorGrayLight,
             }}
         >
-            <Card.Title title={title} />
-            <Card.Content>
-                <Text variant="titleLarge">{date}</Text>
-                <Text variant="bodyMedium">{address}</Text>
-                <Text variant="bodyMedium">{description}</Text>
+            <Card.Title title={title} titleStyle={{ fontSize: 20 }} />
+            <Card.Cover
+                source={{ uri: "https://picsum.photos/700" }}
+                style={{ borderRadius: 0 }}
+            />
+            <Card.Content style={{ marginHorizontal: 5, marginVertical: 10 }}>
+                {description ? (
+                    <Text style={{ fontSize: 18 }}>{description}</Text>
+                ) : (
+                    ""
+                )}
+                {date ? <Text style={{ fontSize: 18 }}>{date}</Text> : ""}
+                {address ? <Text style={{ fontSize: 18 }}>{address}</Text> : ""}
             </Card.Content>
-            {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
             {/* <Card.Actions>
             <Button>Cancel</Button>
             <Button>Ok</Button>
@@ -31,7 +36,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             style={{
                 backgroundColor: colors.backgroundColorGrayLight,
                 borderColor: colors.backgroundColorGray,
-                borderRadius: 10,
+                borderRadius: 5,
             }}
             contentStyle={{
                 paddingVertical: 10,
