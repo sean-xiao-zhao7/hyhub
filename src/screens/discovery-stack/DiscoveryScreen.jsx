@@ -54,8 +54,8 @@ const DiscoveryScreen = () => {
                                     content={classContent.date}
                                     address={classContent.address}
                                     description={classContent.description}
+                                    padding={"none"}
                                 />
-                                <MyDivider />
                                 <MyDivider />
                             </View>
                         );

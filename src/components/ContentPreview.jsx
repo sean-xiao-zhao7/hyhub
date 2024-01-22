@@ -1,7 +1,10 @@
 import { Card, Text } from "react-native-paper";
 
-const ContentPreview = ({ id, title, date, address, description }) => (
-    <Card mode="elevated">
+const ContentPreview = ({ id, title, date, address, description, padding }) => (
+    <Card
+        mode={padding === "none" ? "contained" : "elevated"}
+        style={{ backgroundColor: "white" }}
+    >
         <Card.Title title={title} />
         <Card.Content>
             <Text variant="titleLarge">{date}</Text>
