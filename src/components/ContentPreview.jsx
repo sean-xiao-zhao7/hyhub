@@ -7,23 +7,24 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: colors.backgroundColorGrayLight,
+                borderTopWidth: 1,
+                borderTopColor: colors.backgroundColorGrayLight,
+                
             }}
         >
             <Card.Title title={title} titleStyle={{ fontSize: 20 }} />
             <Card.Cover
                 source={{ uri: "https://picsum.photos/700" }}
-                style={{ borderRadius: 0 }}
+                style={{ borderRadius: 0, height: 350 }}
             />
-            <Card.Content style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <Card.Content style={{ marginHorizontal: 5, marginTop: 10 }}>
                 {description ? (
-                    <Text style={{ fontSize: 18 }}>{description}</Text>
+                    <Text style={{ fontSize: 16 }}>{description}</Text>
                 ) : (
                     ""
                 )}
-                {date ? <Text style={{ fontSize: 18 }}>{date}</Text> : ""}
-                {address ? <Text style={{ fontSize: 18 }}>{address}</Text> : ""}
+                {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
+                {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             {/* <Card.Actions>
             <Button>Cancel</Button>
