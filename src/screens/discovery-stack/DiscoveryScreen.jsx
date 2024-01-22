@@ -37,7 +37,7 @@ const DiscoveryScreen = () => {
                         size={32}
                         color={colors.mainColor}
                     />
-                    <Text style={{ fontSize: 20 }}>
+                    <Text style={{ fontSize: 20, color: colors.mainColorFont }}>
                         Discover gems around you.
                     </Text>
                 </View>

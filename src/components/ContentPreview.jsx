@@ -7,17 +7,21 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderTopWidth: 1,
-                borderTopColor: colors.mainColor,
+                borderTopWidth: 2,
+                borderTopColor: colors.backgroundColorGrayLight,
             }}
         >
             <Card.Title
                 title={title}
-                titleStyle={{ fontSize: 20, paddingVertical: 20 }}
+                titleStyle={{
+                    fontSize: 20,
+                    paddingVertical: 20,
+                    color: colors.mainColorFont,
+                }}
             />
             <Card.Cover
                 source={{ uri: "https://picsum.photos/700" }}
-                style={{ borderRadius: 0, height: 300 }}
+                style={{ borderRadius: 0, height: 350 }}
             />
             <Card.Content style={{ marginTop: 15 }}>
                 {description ? (
