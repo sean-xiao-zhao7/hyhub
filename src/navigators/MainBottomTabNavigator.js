@@ -16,10 +16,9 @@ export default function MainBottomTabNavigator() {
             inactiveColor={colors.secondColor}
             barStyle={{
                 backgroundColor: colors.backgroundColor,
-                shadowColor: colors.borderColor,
-                shadowOffset: { width: 1, height: 1 },
-                shadowRadius: 5,
-                shadowOpacity: 1,
+                marginTop: -40,
+                borderTopWidth: 1,
+                borderTopColor: colors.backgroundColorGrayLight,
             }}
         >
             <MainBottomTabNav.Screen
