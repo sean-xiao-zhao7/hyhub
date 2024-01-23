@@ -33,18 +33,63 @@ const DiscoveryScreen = () => {
                         flexDirection: "row",
                         paddingBottom: 10,
                         paddingHorizontal: 10,
-                        justifyContent: "center",
+                        justifyContent: "space-between",
                         backgroundColor: colors.mainColorLight,
                     }}
                 >
-                    <MaterialCommunityIcons
-                        name="fire"
-                        size={32}
-                        color={"#fff"}
-                    />
-                    <Text style={{ fontSize: 20, color: "#fff" }}>
-                        Discover Gems
-                    </Text>
+                    <View
+                        style={{
+                            alignItems: "center",
+                            flexDirection: "row",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <MaterialCommunityIcons
+                            name="filter-variant"
+                            size={32}
+                            color={"#fff"}
+                        />
+                    </View>
+                    <View
+                        style={{
+                            alignItems: "center",
+                            flexDirection: "row",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Text
+                            style={{
+                                fontSize: 20,
+                                color: "#fff",
+                                marginLeft: 5,
+                            }}
+                        >
+                            Discover Gems
+                        </Text>
+                    </View>
+                    <View
+                        style={{
+                            alignItems: "center",
+                            flexDirection: "row",
+                            justifyContent: "center",
+                        }}
+                    >
+                        {/* <MaterialCommunityIcons
+                            name="bell"
+                            size={30}
+                            color={"#fff"}
+                        />
+                        <MaterialCommunityIcons
+                            name="filter-variant"
+                            size={32}
+                            color={"#fff"}
+                        /> */}
+                        <MaterialCommunityIcons
+                            name="magnify"
+                            size={32}
+                            color={"#fff"}
+                        />
+                    </View>
                 </View>
                 <View style={{ backgroundColor: "white" }}>
                     {contents.map((content) => {
