@@ -18,7 +18,7 @@ const DiscoveryScreen = () => {
     });
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: colors.mainColorLight }}>
             <ScrollView
                 contentContainerStyle={{
                     ...mainScreenStyle,
@@ -29,20 +29,29 @@ const DiscoveryScreen = () => {
                     style={{
                         alignItems: "center",
                         flexDirection: "row",
-                        paddingHorizontal: 10,
+                        padding: 10,
+                        // justifyContent: "center",
+                        backgroundColor: colors.mainColorLight,
+                        shadowColor: "#000",
+                        shadowOffset: {
+                            width: 0,
+                            height: 3,
+                        },
+                        shadowOpacity: 0.3,
+                        shadowRadius: 3,
+                        elevation: 4,
                     }}
                 >
                     <MaterialCommunityIcons
                         name="fire"
                         size={32}
-                        color={colors.mainColor}
+                        color={"#fff"}
                     />
-                    <Text style={{ fontSize: 20, color: colors.mainColorFont }}>
-                        Discover gems around you.
+                    <Text style={{ fontSize: 20, color: "#fff" }}>
+                        Discover Gems
                     </Text>
                 </View>
-                <MyDivider />
-                <View>
+                <View style={{ backgroundColor: "white" }}>
                     {contents.map((content) => {
                         const classContent = JSON.parse(content);
                         return (
