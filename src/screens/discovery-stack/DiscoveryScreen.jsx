@@ -18,7 +18,9 @@ const DiscoveryScreen = () => {
     });
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: colors.mainColorLight }}>
+        <SafeAreaView
+            style={{ flex: 1, backgroundColor: colors.mainColorLight }}
+        >
             <ScrollView
                 contentContainerStyle={{
                     ...mainScreenStyle,
@@ -29,17 +31,10 @@ const DiscoveryScreen = () => {
                     style={{
                         alignItems: "center",
                         flexDirection: "row",
-                        padding: 10,
-                        // justifyContent: "center",
+                        paddingBottom: 10,
+                        paddingHorizontal: 10,
+                        justifyContent: "center",
                         backgroundColor: colors.mainColorLight,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 3,
-                        },
-                        shadowOpacity: 0.3,
-                        shadowRadius: 3,
-                        elevation: 4,
                     }}
                 >
                     <MaterialCommunityIcons

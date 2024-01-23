@@ -9,15 +9,15 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderTopWidth: 3,
-                borderTopColor: colors.backgroundColorGrayLight,
+                borderBottomWidth: 5,
+                borderBottomColor: colors.backgroundColorGrayLight,
+                paddingVertical: 10,
             }}
         >
             <Card.Title
                 title={title}
                 titleStyle={{
                     fontSize: 20,
-                    paddingTop: 10,
                     color: colors.mainColorFont,
                 }}
             />
