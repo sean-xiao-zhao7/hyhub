@@ -1,4 +1,6 @@
-import { Card, Text } from "react-native-paper";
+import { Card, Text, Button } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+
 import colors from "../styles/colors";
 
 const ContentPreview = ({ id, title, date, address, description, padding }) =>
@@ -15,11 +17,11 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 title={title}
                 titleStyle={{
                     fontSize: 20,
-                    paddingTop: 15,
+                    paddingTop: 10,
                     color: colors.mainColorFont,
                 }}
             />
-            <Card.Content style={{ marginBottom: 15, marginTop: 5 }}>
+            <Card.Content style={{ marginBottom: 15, marginTop: 0 }}>
                 {description ? (
                     <Text style={{ fontSize: 16 }}>{description}</Text>
                 ) : (
@@ -34,10 +36,10 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
-            {/* <Card.Actions>
-            <Button>Cancel</Button>
-            <Button>Ok</Button>
-        </Card.Actions> */}
+            <Card.Actions>
+                <Button>Join</Button>
+                <Button>Save</Button>
+            </Card.Actions>
         </Card>
     ) : (
         <Card
@@ -45,7 +47,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             style={{
                 backgroundColor: colors.backgroundColorGrayLight,
                 borderColor: colors.backgroundColorGray,
-                borderRadius: 5,
+                borderRadius: 0,
             }}
             contentStyle={{
                 paddingVertical: 5,
@@ -63,11 +65,10 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
-            {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
-            {/* <Card.Actions>
-        <Button>Cancel</Button>
-        <Button>Ok</Button>
-    </Card.Actions> */}
+            <Card.Actions>
+                <Button>Manage</Button>
+                <Button>Save</Button>
+            </Card.Actions>
         </Card>
     );
 
