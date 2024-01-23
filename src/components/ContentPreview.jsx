@@ -7,7 +7,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderTopWidth: 2,
+                borderTopWidth: 3,
                 borderTopColor: colors.backgroundColorGrayLight,
             }}
         >
@@ -15,20 +15,22 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 title={title}
                 titleStyle={{
                     fontSize: 20,
-                    paddingVertical: 20,
+                    paddingTop: 15,
                     color: colors.mainColorFont,
                 }}
             />
-            <Card.Cover
-                source={{ uri: "https://picsum.photos/700" }}
-                style={{ borderRadius: 0, height: 350 }}
-            />
-            <Card.Content style={{ marginTop: 15 }}>
+            <Card.Content style={{ marginBottom: 15, marginTop: 5 }}>
                 {description ? (
                     <Text style={{ fontSize: 16 }}>{description}</Text>
                 ) : (
                     ""
                 )}
+            </Card.Content>
+            <Card.Cover
+                source={{ uri: "https://picsum.photos/700" }}
+                style={{ borderRadius: 0, height: 350 }}
+            />
+            <Card.Content style={{ marginTop: 15 }}>
                 {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
@@ -39,21 +41,27 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
         </Card>
     ) : (
         <Card
-            mode="outlined"
+            mode="contained"
             style={{
                 backgroundColor: colors.backgroundColorGrayLight,
                 borderColor: colors.backgroundColorGray,
                 borderRadius: 5,
             }}
             contentStyle={{
-                paddingVertical: 10,
+                paddingVertical: 5,
             }}
         >
-            <Card.Title title={title} />
+            <Card.Title
+                title={title}
+                titleStyle={{
+                    fontSize: 20,
+                    paddingVertical: 5,
+                    color: colors.mainColorFont,
+                }}
+            />
             <Card.Content>
-                <Text variant="titleLarge">{date}</Text>
-                <Text variant="bodyMedium">{address}</Text>
-                <Text variant="bodyMedium">{description}</Text>
+                {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
+                {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             {/* <Card.Cover source={{ uri: 'https://picsum.photos/700' }} /> */}
             {/* <Card.Actions>

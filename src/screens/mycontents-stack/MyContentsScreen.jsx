@@ -41,7 +41,6 @@ const MyContentsScreen = ({ navigation }) => {
                         return (
                             <View key={classContent.id}>
                                 <MyDivider />
-                                <MyDivider />
                                 <ContentPreview
                                     id={classContent.id}
                                     title={classContent.title}

@@ -42,7 +42,6 @@ const DiscoveryScreen = () => {
                     </Text>
                 </View>
                 <MyDivider />
-                <MyDivider />
                 <View>
                     {contents.map((content) => {
                         const classContent = JSON.parse(content);
