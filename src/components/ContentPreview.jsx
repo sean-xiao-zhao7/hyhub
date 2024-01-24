@@ -19,11 +19,13 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 titleStyle={{
                     fontSize: 20,
                     color: colors.mainColorFont,
+                    marginBottom: 10,
                 }}
+                titleNumberOfLines={2}
             />
             <Card.Content style={{ marginBottom: 15, marginTop: 0 }}>
                 {description ? (
-                    <Text style={{ fontSize: 16, maxHeight: 120 }}>
+                    <Text style={{ fontSize: 16, maxHeight: 80 }}>
                         {description}
                     </Text>
                 ) : (
@@ -40,7 +42,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             </Card.Content>
             <Card.Actions>
                 <Button>Join</Button>
-                <Button>Save</Button>
+                <Button>Details</Button>
             </Card.Actions>
         </Card>
     ) : (
@@ -62,6 +64,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                     paddingVertical: 5,
                     color: colors.mainColorFont,
                 }}
+                titleNumberOfLines={2}
             />
             <Card.Content>
                 {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
