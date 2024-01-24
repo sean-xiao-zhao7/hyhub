@@ -23,7 +23,9 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
             />
             <Card.Content style={{ marginBottom: 15, marginTop: 0 }}>
                 {description ? (
-                    <Text style={{ fontSize: 16 }}>{description}</Text>
+                    <Text style={{ fontSize: 16, maxHeight: 120 }}>
+                        {description}
+                    </Text>
                 ) : (
                     ""
                 )}
