@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import Content from "../../models/content";
 
 const myContentsSlice = createSlice({
