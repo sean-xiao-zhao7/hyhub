@@ -19,14 +19,12 @@ const DiscoveryScreen = () => {
 
     return (
         <SafeAreaView
-            style={{ flex: 1, backgroundColor: colors.mainColorLight }}
+            style={{
+                flex: 1,
+                backgroundColor: colors.mainColorLight,
+            }}
         >
-            <ScrollView
-                contentContainerStyle={{
-                    ...mainScreenStyle,
-                    paddingHorizontal: 0,
-                }}
-            >
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                     style={{
                         alignItems: "center",
