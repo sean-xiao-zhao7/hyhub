@@ -1,21 +1,26 @@
+import { useEffect } from "react";
 import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { useSelector, useDispatch } from "react-redux";
 import { Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
-
-import { useSelector } from "react-redux";
 
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
+import { loadContentsAction } from "../../redux/slices/myContentsSlice";
 
 const DiscoveryScreen = () => {
+    const dispatch = useDispatch();
+
     const contents = useSelector((state) => {
         return state.myContents.contents;
     });
+
+    useEffect(() => {
+        dispatch(loadContentsAction());
+    }, []);
 
     return (
         <SafeAreaView

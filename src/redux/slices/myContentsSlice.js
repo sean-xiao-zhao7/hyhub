@@ -5,19 +5,46 @@ import Content from "../../models/content";
 
 export const addContentAction = createAsyncThunk(
     "content/addContentAction",
-    async (thunkAPI) => {
+    async (newContentInput, thunkAPI) => {
+        const state = thunkAPI.getState();
+        const contents = state.MyContents.contents;
+
         const newContent = new Content(
-            action.payload.title,
-            action.payload.date,
-            action.payload.address,
-            action.payload.description
+            newContentInput.title,
+            newContentInput.date,
+            newContentInput.address,
+            newContentInput.description
         );
+        console.log(state);
+        contents.push(newContent);
+        console.log(contents);
+
         try {
-            await AsyncStorage.setItem("fire-gem-contents", value);
+            const jsonContents = JSON.stringify(contents);
+            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
+            console.log("got here");
+            return contents;
         } catch (err) {
             console.log(err);
         }
-        return JSON.stringify(newContent);
+    }
+);
+
+export const loadContentsAction = createAsyncThunk(
+    "content/loadContentsAction",
+    async (thunkAPI) => {
+        let jsonContents = [];
+        try {
+            const asyncStorageContents = await AsyncStorage.getItem(
+                "fire-gem-contents"
+            );
+            if (asyncStorageContents) {
+                jsonContents = JSON.parse(asyncStorageContents);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+        return jsonContents;
     }
 );
 
@@ -38,7 +65,10 @@ const myContentsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(addContentAction.fulfilled, (state, action) => {
-                state.contents.push();
+                state.contents = action.payload;
+            })
+            .addCase(loadContentsAction.fulfilled, (state, action) => {
+                state.contents = action.payload;
             })
             .addCase(removeContentAction.fulfilled, (state, action) => {
                 // remove target event from contents
