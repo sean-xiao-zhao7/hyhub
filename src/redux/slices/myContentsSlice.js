@@ -27,19 +27,17 @@ export const addContentAction = createAsyncThunk(
 
 export const loadContentsAction = createAsyncThunk(
     "content/loadContentsAction",
-    async (thunkAPI) => {
-        let jsonContents = [];
+    async () => {
         try {
             const asyncStorageContents = await AsyncStorage.getItem(
                 "fire-gem-contents"
             );
             if (asyncStorageContents) {
-                jsonContents = JSON.parse(asyncStorageContents);
+                return JSON.parse(asyncStorageContents);
             }
         } catch (err) {
             console.log(err);
         }
-        return jsonContents;
     }
 );
 
