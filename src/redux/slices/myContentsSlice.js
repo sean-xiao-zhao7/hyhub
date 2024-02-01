@@ -5,25 +5,20 @@ import Content from "../../models/content";
 
 export const addContentAction = createAsyncThunk(
     "content/addContentAction",
-    async (newContentInput, thunkAPI) => {
-        const state = thunkAPI.getState();
-        const contents = state.MyContents.contents;
-
-        const newContent = new Content(
-            newContentInput.title,
-            newContentInput.date,
-            newContentInput.address,
-            newContentInput.description
-        );
-        console.log(state);
-        contents.push(newContent);
-        console.log(contents);
-
+    async (newContentInput, { getState }) => {
+        const state = getState();
         try {
-            const jsonContents = JSON.stringify(contents);
+            const newContent = new Content(
+                newContentInput.title,
+                newContentInput.date,
+                newContentInput.address,
+                newContentInput.description
+            );
+            const newContents = [...state.myContents.contents, newContent];
+
+            const jsonContents = JSON.stringify(newContents);
             await AsyncStorage.setItem("fire-gem-contents", jsonContents);
-            console.log("got here");
-            return contents;
+            return newContents;
         } catch (err) {
             console.log(err);
         }

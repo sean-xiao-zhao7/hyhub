@@ -36,8 +36,7 @@ const MyContentsScreen = ({ navigation }) => {
                     Add your event, service, etc.
                 </Button>
                 <View>
-                    {contents.map((content) => {
-                        const classContent = JSON.parse(content);
+                    {contents.map((classContent) => {
                         return (
                             <View key={classContent.id}>
                                 <MyDivider />

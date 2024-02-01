@@ -95,8 +95,7 @@ const DiscoveryScreen = () => {
                     </View>
                 </View>
                 <View style={{ backgroundColor: "white" }}>
-                    {contents.map((content) => {
-                        const classContent = JSON.parse(content);
+                    {contents.map((classContent) => {
                         return (
                             <View key={classContent.id}>
                                 <ContentPreview
