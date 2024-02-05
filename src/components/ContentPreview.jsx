@@ -1,10 +1,15 @@
 import { Card, Text, Button } from "react-native-paper";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
 import colors from "../styles/colors";
 
-const ContentPreview = ({ id, title, date, address, description, padding }) =>
-    padding === "none" ? (
+const ContentPreview = ({ id, title, date, address, description, padding }) => {
+    const navigation = useNavigation();
+    const manageContent = (id) => {
+        navigation.navigate("ManageContentScreen", { contentId: id });
+    };
+
+    return padding === "none" ? (
         <Card
             mode="contained"
             style={{
@@ -71,10 +76,11 @@ const ContentPreview = ({ id, title, date, address, description, padding }) =>
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             <Card.Actions>
-                <Button>Manage</Button>
+                <Button onPress={() => manageContent(id)}>Manage</Button>
                 <Button>Save</Button>
             </Card.Actions>
         </Card>
     );
+};
 
 export default ContentPreview;
