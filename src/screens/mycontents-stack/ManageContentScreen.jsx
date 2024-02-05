@@ -8,6 +8,8 @@ import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
 
 const ManageContentScreen = (props) => {
+    const deleteContent = () => {};
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <ScrollView style={mainScreenStyle}>
@@ -36,7 +38,14 @@ const ManageContentScreen = (props) => {
                     </Button>
                 </View>
                 <MyDivider />
-                <Text>Manage Content Screen</Text>
+                <Text>Title: {props.route.params.content.title}</Text>
+                <Text>Date: {props.route.params.content.date}</Text>
+                <Text>Address: {props.route.params.content.address}</Text>
+                <Text>Desc: {props.route.params.content.description}</Text>
+                <Text>ID: {props.route.params.content.id} (interal)</Text>
+                <Button icon="delete" mode="contained" onPress={deleteContent}>
+                    Delete this content
+                </Button>
             </ScrollView>
         </SafeAreaView>
     );

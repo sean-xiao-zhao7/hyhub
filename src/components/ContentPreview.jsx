@@ -5,8 +5,10 @@ import colors from "../styles/colors";
 
 const ContentPreview = ({ id, title, date, address, description, padding }) => {
     const navigation = useNavigation();
-    const manageContent = (id) => {
-        navigation.navigate("ManageContentScreen", { contentId: id });
+    const manageContent = () => {
+        navigation.navigate("ManageContentScreen", {
+            content: { id, title, date, address, description },
+        });
     };
 
     return padding === "none" ? (
@@ -76,7 +78,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) => {
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             <Card.Actions>
-                <Button onPress={() => manageContent(id)}>Manage</Button>
+                <Button onPress={() => manageContent()}>Manage</Button>
                 <Button>Save</Button>
             </Card.Actions>
         </Card>

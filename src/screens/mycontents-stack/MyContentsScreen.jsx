@@ -25,7 +25,9 @@ const MyContentsScreen = ({ navigation }) => {
                         size={30}
                         color={colors.mainColor}
                     />
-                    <Text style={{ fontSize: 20 }}>My Contents</Text>
+                    <Text style={{ fontSize: 20, paddingLeft: 5 }}>
+                        My Contents
+                    </Text>
                 </View>
                 <MyDivider />
                 <Button

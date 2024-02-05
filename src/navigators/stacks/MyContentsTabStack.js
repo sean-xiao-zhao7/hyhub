@@ -14,12 +14,12 @@ const MyContentsTabStackNavigator = () => (
             component={MyContentsScreen}
         />
         <MyContentsTabStack.Screen
-            name="ManageContentScreen"
-            component={ManageContentScreen}
-        />
-        <MyContentsTabStack.Screen
             name="AddContentScreen"
             component={AddContentScreen}
+        />
+        <MyContentsTabStack.Screen
+            name="ManageContentScreen"
+            component={ManageContentScreen}
         />
     </MyContentsTabStack.Navigator>
 );
