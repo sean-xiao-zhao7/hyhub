@@ -6,9 +6,16 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
+import { useDispatch } from "react-redux";
+import { deleteContentAction } from "../../redux/slices/myContentsSlice";
 
 const ManageContentScreen = (props) => {
-    const deleteContent = () => {};
+    const dispatch = useDispatch();
+
+    const deleteContent = () => {
+        dispatch(deleteContentAction(props.route.params.content.id));
+        props.navigation.goBack();
+    };
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -38,11 +45,13 @@ const ManageContentScreen = (props) => {
                     </Button>
                 </View>
                 <MyDivider />
-                <Text>Title: {props.route.params.content.title}</Text>
-                <Text>Date: {props.route.params.content.date}</Text>
-                <Text>Address: {props.route.params.content.address}</Text>
-                <Text>Desc: {props.route.params.content.description}</Text>
-                <Text>ID: {props.route.params.content.id} (interal)</Text>
+                <View style={{ padding: 10 }}>
+                    <Text>Title: {props.route.params.content.title}</Text>
+                    <Text>Date: {props.route.params.content.date}</Text>
+                    <Text>Address: {props.route.params.content.address}</Text>
+                    <Text>Desc: {props.route.params.content.description}</Text>
+                    <Text>ID: {props.route.params.content.id} (interal)</Text>
+                </View>
                 <Button icon="delete" mode="contained" onPress={deleteContent}>
                     Delete this content
                 </Button>

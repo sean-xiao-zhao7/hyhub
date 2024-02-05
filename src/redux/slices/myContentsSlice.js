@@ -40,12 +40,20 @@ export const loadContentsAction = createAsyncThunk(
     }
 );
 
-export const removeContentAction = createAsyncThunk(
-    "content/removeContentAction",
-    async (thunkAPI) => {
-        state.contents.filter(
-            (content) => content.id !== action.payload.newContent.id
+export const deleteContentAction = createAsyncThunk(
+    "content/deleteContentAction",
+    async (id, { getState }) => {
+        const state = getState();
+        const newContents = state.myContents.contents.filter(
+            (content) => content.id !== id
         );
+        try {
+            const jsonContents = JSON.stringify(newContents);
+            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
+            return newContents;
+        } catch (err) {
+            console.log(err);
+        }
     }
 );
 
@@ -62,8 +70,8 @@ const myContentsSlice = createSlice({
             .addCase(loadContentsAction.fulfilled, (state, action) => {
                 state.contents = action.payload;
             })
-            .addCase(removeContentAction.fulfilled, (state, action) => {
-                // remove target event from contents
+            .addCase(deleteContentAction.fulfilled, (state, action) => {
+                state.contents = action.payload;
             });
     },
 });
