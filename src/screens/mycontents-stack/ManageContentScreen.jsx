@@ -47,9 +47,13 @@ const ManageContentScreen = (props) => {
                 <MyDivider />
                 <View style={{ padding: 10 }}>
                     <Text>Title: {props.route.params.content.title}</Text>
+                    <MyDivider />
                     <Text>Date: {props.route.params.content.date}</Text>
+                    <MyDivider />
                     <Text>Address: {props.route.params.content.address}</Text>
+                    <MyDivider />
                     <Text>Desc: {props.route.params.content.description}</Text>
+                    <MyDivider />
                     <Text>ID: {props.route.params.content.id} (interal)</Text>
                 </View>
                 <Button icon="delete" mode="contained" onPress={deleteContent}>

@@ -45,7 +45,7 @@ const MyContentsScreen = ({ navigation }) => {
                                 <ContentPreview
                                     id={classContent.id}
                                     title={classContent.title}
-                                    content={classContent.date}
+                                    date={classContent.date}
                                     address={classContent.address}
                                     description={classContent.description}
                                 />

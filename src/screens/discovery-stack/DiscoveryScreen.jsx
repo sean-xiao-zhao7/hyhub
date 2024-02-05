@@ -77,16 +77,6 @@ const DiscoveryScreen = () => {
                             justifyContent: "center",
                         }}
                     >
-                        {/* <MaterialCommunityIcons
-                            name="bell"
-                            size={30}
-                            color={"#fff"}
-                        />
-                        <MaterialCommunityIcons
-                            name="filter-variant"
-                            size={32}
-                            color={"#fff"}
-                        /> */}
                         <MaterialCommunityIcons
                             name="magnify"
                             size={32}
@@ -101,7 +91,7 @@ const DiscoveryScreen = () => {
                                 <ContentPreview
                                     id={classContent.id}
                                     title={classContent.title}
-                                    content={classContent.date}
+                                    date={classContent.date}
                                     address={classContent.address}
                                     description={classContent.description}
                                     padding={"none"}
