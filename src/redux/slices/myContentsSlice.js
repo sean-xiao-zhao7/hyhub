@@ -1,19 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import Content from "../../models/content";
-
 export const addContentAction = createAsyncThunk(
     "content/addContentAction",
     async (newContentInput, { getState }) => {
         const state = getState();
         try {
-            const newContent = new Content(
-                newContentInput.title,
-                newContentInput.date,
-                newContentInput.address,
-                newContentInput.description
-            );
+            const newContent = {
+                id: new Date().toISOString(true),
+                title: newContentInput.title,
+                date: newContentInput.date,
+                address: newContentInput.address,
+                description: newContentInput.description,
+            };
             const newContents = [...state.myContents.contents, newContent];
 
             const jsonContents = JSON.stringify(newContents);
