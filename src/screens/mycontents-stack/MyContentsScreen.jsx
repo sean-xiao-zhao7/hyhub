@@ -21,7 +21,7 @@ const MyContentsScreen = ({ navigation }) => {
             <ScrollView contentContainerStyle={mainScreenStyle}>
                 <View style={{ alignItems: "center", flexDirection: "row" }}>
                     <MaterialCommunityIcons
-                        name="diamond-stone"
+                        name="diamond"
                         size={30}
                         color={colors.mainColor}
                     />
