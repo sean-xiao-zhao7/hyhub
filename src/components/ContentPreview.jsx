@@ -28,7 +28,7 @@ const ContentPreview = ({
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderBottomWidth: 5,
+                borderBottomWidth: 2,
                 borderBottomColor: colors.backgroundColorGrayLight,
                 paddingBottom: 10,
             }}
@@ -36,13 +36,24 @@ const ContentPreview = ({
             <View style={{ padding: 10 }}>
                 <Text
                     style={{
-                        fontSize: 20,
-                        fontWeight: 600,
+                        fontSize: 22,
+                        fontWeight: 500,
                         color: colors.mainColorDark,
                     }}
                 >
                     {title}
                 </Text>
+                <View style={{ flexDirection: "row" }}>
+                    <Text
+                        style={{
+                            color: colors.mainColor,
+                            marginTop: 5,
+                            fontSize: 16,
+                        }}
+                    >
+                        Event
+                    </Text>
+                </View>
                 {description ? (
                     <Text
                         style={{
@@ -59,7 +70,7 @@ const ContentPreview = ({
             </View>
             <Card.Cover
                 source={{ uri: image }}
-                style={{ borderRadius: 0, height: 350 }}
+                style={{ borderRadius: 0, height: 300 }}
             />
             <View
                 style={{
@@ -173,7 +184,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="map"
                                 size={20}
-                                color={colors.lightGray}
+                                color={colors.mainColorVeryLight}
                                 style={{ paddingRight: 5 }}
                             />
 
@@ -200,7 +211,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="clock-outline"
                                 size={20}
-                                color={colors.lightGray}
+                                color={colors.mainColorVeryLight}
                                 style={{ paddingRight: 5 }}
                             />
                             <Text
