@@ -12,6 +12,7 @@ export const addContentAction = createAsyncThunk(
                 date: newContentInput.date,
                 address: newContentInput.address,
                 description: newContentInput.description,
+                image: newContentInput.image,
             };
             const newContents = [...state.myContents.contents, newContent];
 

@@ -48,6 +48,7 @@ const MyContentsScreen = ({ navigation }) => {
                                     date={classContent.date}
                                     address={classContent.address}
                                     description={classContent.description}
+                                    image={classContent.image}
                                 />
                             </View>
                         );

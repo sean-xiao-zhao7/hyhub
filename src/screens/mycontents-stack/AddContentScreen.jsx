@@ -13,13 +13,13 @@ import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
 
 const AddContentScreen = ({ navigation }) => {
-    const [image, setImage] = useState(null);
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
+    const [image, setImage] = useState(null);
 
     const addContent = () => {
         dispatch(
@@ -28,6 +28,7 @@ const AddContentScreen = ({ navigation }) => {
                 date,
                 address,
                 description,
+                image,
             })
         );
         navigation.goBack();
@@ -75,7 +76,7 @@ const AddContentScreen = ({ navigation }) => {
                     </Button>
                 </View>
                 <MyDivider />
-                <View style={{ paddingHorizontal: 5 }}>
+                <View style={{ paddingHorizontal: 5, paddingBottom: 40 }}>
                     <MyDivider />
                     <TextInput
                         label="Full Title"

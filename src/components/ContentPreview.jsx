@@ -3,11 +3,19 @@ import { useNavigation } from "@react-navigation/native";
 
 import colors from "../styles/colors";
 
-const ContentPreview = ({ id, title, date, address, description, padding }) => {
+const ContentPreview = ({
+    id,
+    title,
+    date,
+    address,
+    description,
+    image,
+    padding,
+}) => {
     const navigation = useNavigation();
     const manageContent = () => {
         navigation.navigate("ManageContentScreen", {
-            content: { id, title, date, address, description },
+            content: { id, title, date, address, description, image },
         });
     };
 
@@ -38,7 +46,7 @@ const ContentPreview = ({ id, title, date, address, description, padding }) => {
                 )}
             </Card.Content>
             <Card.Cover
-                source={{ uri: "https://picsum.photos/700" }}
+                source={{ uri: image }}
                 style={{ borderRadius: 0, height: 350 }}
             />
             <Card.Content style={{ marginTop: 15 }}>
