@@ -26,7 +26,7 @@ const DiscoveryScreen = () => {
         <SafeAreaView
             style={{
                 flex: 1,
-                backgroundColor: colors.mainColorLight,
+                backgroundColor: colors.mainColor,
             }}
         >
             <ScrollView
@@ -40,7 +40,7 @@ const DiscoveryScreen = () => {
                         paddingBottom: 10,
                         paddingHorizontal: 10,
                         justifyContent: "space-between",
-                        backgroundColor: colors.mainColorLight,
+                        backgroundColor: colors.mainColor,
                     }}
                 >
                     <View

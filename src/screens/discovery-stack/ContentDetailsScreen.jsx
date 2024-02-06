@@ -14,8 +14,10 @@ const ContentDetailsScreen = ({ route, navigation }) => {
     const { content } = route.params;
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
-            <View style={{ padding: 10 }}>
-                <Text style={{ fontSize: 20 }}>{content.title}</Text>
+            <View style={{ padding: 5 }}>
+                <Text style={{ fontSize: 20, fontWeight: "500" }}>
+                    {content.title}
+                </Text>
                 <MyDivider />
                 <Text style={{ fontSize: 18 }}>{content.description}</Text>
                 <MyDivider />

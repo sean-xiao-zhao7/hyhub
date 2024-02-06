@@ -26,7 +26,7 @@ const DiscoveryTabStackNavigator = () => (
                 headerTitleStyle: { color: "white", fontSize: 18 },
                 headerTintColor: 'white',
                 headerStyle: {
-                    backgroundColor: colors.mainColorLight,
+                    backgroundColor: colors.mainColor,
                 },
             }}
         />

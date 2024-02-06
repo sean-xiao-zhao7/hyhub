@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 // customs
+import MyDivider from "../components/MyDivder";
 import colors from "../styles/colors";
 
 const ContentPreview = ({
@@ -29,38 +30,33 @@ const ContentPreview = ({
                 borderRadius: 0,
                 borderBottomWidth: 5,
                 borderBottomColor: colors.backgroundColorGrayLight,
-                paddingVertical: 10,
             }}
         >
-            <Card.Title
-                title={title}
-                titleStyle={{
-                    fontSize: 20,
-                }}
-                titleNumberOfLines={2}
-            />
-            {description ? (
-                <Card.Content>
+            <View style={{ padding: 10 }}>
+                <Text style={{ fontSize: 20, fontWeight: 600 }}>{title}</Text>
+                {description ? (
                     <Text
                         style={{
-                            fontSize: 16,
-                            maxHeight: 80,
-                            marginBottom: 10,
+                            fontSize: 18,
+                            maxHeight: 90,
+                            marginTop: 5,
                         }}
                     >
                         {description}
                     </Text>
-                </Card.Content>
-            ) : null}
-
+                ) : null}
+            </View>
             <Card.Cover
                 source={{ uri: image }}
                 style={{ borderRadius: 0, height: 350 }}
             />
-            {address ? (
-                <Card.Content style={{ marginTop: 15 }}>
+            <View style={{ padding: 10 }}>
+                {address ? (
                     <View
-                        style={{ alignItems: "center", flexDirection: "row" }}
+                        style={{
+                            alignItems: "center",
+                            flexDirection: "row",
+                        }}
                     >
                         <MaterialCommunityIcons
                             name="map-marker"
@@ -71,10 +67,9 @@ const ContentPreview = ({
 
                         <Text style={{ fontSize: 16 }}>{address}</Text>
                     </View>
-                </Card.Content>
-            ) : null}
-            {date ? (
-                <Card.Content>
+                ) : null}
+                {address && date ? <MyDivider /> : null}
+                {date ? (
                     <View
                         style={{ alignItems: "center", flexDirection: "row" }}
                     >
@@ -86,8 +81,8 @@ const ContentPreview = ({
                         />
                         <Text style={{ fontSize: 16 }}>{date}</Text>
                     </View>
-                </Card.Content>
-            ) : null}
+                ) : null}
+            </View>
             <Card.Actions>
                 <Button>Join</Button>
                 <Button
