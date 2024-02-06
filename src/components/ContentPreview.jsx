@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Card, Text, Button } from "react-native-paper";
+import { Card, Text, Button, TouchableRipple } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -30,16 +30,28 @@ const ContentPreview = ({
                 borderRadius: 0,
                 borderBottomWidth: 5,
                 borderBottomColor: colors.backgroundColorGrayLight,
+                paddingBottom: 10,
             }}
         >
             <View style={{ padding: 10 }}>
-                <Text style={{ fontSize: 20, fontWeight: 600 }}>{title}</Text>
+                <Text
+                    style={{
+                        fontSize: 20,
+                        fontWeight: 600,
+                        color: colors.mainColorDark,
+                        marginTop: 5,
+                    }}
+                >
+                    {title}
+                </Text>
                 {description ? (
                     <Text
                         style={{
                             fontSize: 18,
-                            maxHeight: 90,
-                            marginTop: 5,
+                            maxHeight: 100,
+                            marginTop: 10,
+                            color: colors.lighterBlack,
+                            lineHeight: 25,
                         }}
                     >
                         {description}
@@ -50,42 +62,16 @@ const ContentPreview = ({
                 source={{ uri: image }}
                 style={{ borderRadius: 0, height: 350 }}
             />
-            <View style={{ padding: 10 }}>
-                {address ? (
-                    <View
-                        style={{
-                            alignItems: "center",
-                            flexDirection: "row",
-                        }}
-                    >
-                        <MaterialCommunityIcons
-                            name="map-marker"
-                            size={26}
-                            color={colors.mainColor}
-                            style={{ paddingRight: 5 }}
-                        />
-
-                        <Text style={{ fontSize: 16 }}>{address}</Text>
-                    </View>
-                ) : null}
-                {address && date ? <MyDivider /> : null}
-                {date ? (
-                    <View
-                        style={{ alignItems: "center", flexDirection: "row" }}
-                    >
-                        <MaterialCommunityIcons
-                            name="clock"
-                            size={26}
-                            color={colors.mainColor}
-                            style={{ paddingRight: 5 }}
-                        />
-                        <Text style={{ fontSize: 16 }}>{date}</Text>
-                    </View>
-                ) : null}
-            </View>
-            <Card.Actions>
-                <Button>Join</Button>
-                <Button
+            <View
+                style={{
+                    flexDirection: "row",
+                    paddingHorizontal: 5,
+                    paddingVertical: 10,
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                }}
+            >
+                <TouchableRipple
                     onPress={() =>
                         navigation.navigate("ContentDetailsScreen", {
                             content: {
@@ -98,10 +84,136 @@ const ContentPreview = ({
                             },
                         })
                     }
+                    style={{ paddingHorizontal: 10 }}
                 >
-                    Details
-                </Button>
-            </Card.Actions>
+                    <MaterialCommunityIcons
+                        name="heart-outline"
+                        size={34}
+                        color={colors.mainColorDark}
+                        style={{ paddingRight: 5 }}
+                    />
+                </TouchableRipple>
+                <View style={{ flexDirection: "row" }}>
+                    <TouchableRipple
+                        onPress={() =>
+                            navigation.navigate("ContentDetailsScreen", {
+                                content: {
+                                    id,
+                                    title,
+                                    date,
+                                    address,
+                                    description,
+                                    image,
+                                },
+                            })
+                        }
+                        style={{ paddingHorizontal: 5 }}
+                    >
+                        <MaterialCommunityIcons
+                            name="share"
+                            size={34}
+                            color={colors.mainColorDark}
+                            style={{ paddingRight: 5 }}
+                        />
+                    </TouchableRipple>
+                    <TouchableRipple
+                        onPress={() =>
+                            navigation.navigate("ContentDetailsScreen", {
+                                content: {
+                                    id,
+                                    title,
+                                    date,
+                                    address,
+                                    description,
+                                    image,
+                                },
+                            })
+                        }
+                        style={{ paddingHorizontal: 5 }}
+                    >
+                        <MaterialCommunityIcons
+                            name="share-variant"
+                            size={34}
+                            color={colors.mainColorDark}
+                            style={{ paddingRight: 5 }}
+                        />
+                    </TouchableRipple>
+                    <TouchableRipple
+                        onPress={() =>
+                            navigation.navigate("ContentDetailsScreen", {
+                                content: {
+                                    id,
+                                    title,
+                                    date,
+                                    address,
+                                    description,
+                                    image,
+                                },
+                            })
+                        }
+                        style={{ paddingHorizontal: 5 }}
+                    >
+                        <MaterialCommunityIcons
+                            name="bookmark-outline"
+                            size={34}
+                            color={colors.mainColorDark}
+                            style={{ paddingRight: 5 }}
+                        />
+                    </TouchableRipple>
+                </View>
+            </View>
+            {address && date ? (
+                <View style={{ padding: 10 }}>
+                    {address ? (
+                        <View
+                            style={{
+                                alignItems: "center",
+                                flexDirection: "row",
+                            }}
+                        >
+                            <MaterialCommunityIcons
+                                name="map-marker"
+                                size={22}
+                                color={colors.lightGray}
+                                style={{ paddingRight: 5 }}
+                            />
+
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                    color: colors.darkerGray,
+                                }}
+                            >
+                                {address}
+                            </Text>
+                        </View>
+                    ) : null}
+                    {address && date ? <MyDivider /> : null}
+                    {date ? (
+                        <View
+                            style={{
+                                alignItems: "center",
+                                flexDirection: "row",
+                            }}
+                        >
+                            <MaterialCommunityIcons
+                                name="clock"
+                                size={22}
+                                color={colors.lightGray}
+                                style={{ paddingRight: 5 }}
+                            />
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                    color: colors.darkerGray,
+                                }}
+                            >
+                                {date}
+                            </Text>
+                        </View>
+                    ) : null}
+                </View>
+            ) : null}
         </Card>
     ) : (
         <Card
