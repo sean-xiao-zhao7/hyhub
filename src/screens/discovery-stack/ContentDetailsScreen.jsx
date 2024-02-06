@@ -14,11 +14,15 @@ const ContentDetailsScreen = ({ route, navigation }) => {
     const { content } = route.params;
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
-            <View style={{ paddingVertical: 10 }}>
+            <View style={{ padding: 10 }}>
                 <Text style={{ fontSize: 20 }}>{content.title}</Text>
+                <MyDivider />
+                <Text style={{ fontSize: 18 }}>{content.description}</Text>
+                <MyDivider />
                 <View
                     style={{
-                        padding: 10,
+                        paddingVertical: 15,
+                        paddingHorizontal: 10,
                         marginVertical: 10,
                         borderRadius: 5,
                         backgroundColor: colors.backgroundColorGrayLight,
@@ -53,13 +57,11 @@ const ContentDetailsScreen = ({ route, navigation }) => {
                         />
                         <Text style={{ fontSize: 18 }}>{content.address}</Text>
                     </View>
-                    <MyDivider />
-                    <Text style={{ fontSize: 18 }}>{content.description}</Text>
-                    <MyDivider />
                     {/* <Text style={{ color: colors.mainColor }}>
                         ID: {content.id} (interal)
                     </Text> */}
                 </View>
+                <MyDivider />
                 <Image
                     source={{ uri: content.image }}
                     style={{ height: 300, borderRadius: 5 }}
