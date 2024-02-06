@@ -90,7 +90,22 @@ const ContentPreview = ({
             ) : null}
             <Card.Actions>
                 <Button>Join</Button>
-                <Button>Details</Button>
+                <Button
+                    onPress={() =>
+                        navigation.navigate("ContentDetailsScreen", {
+                            content: {
+                                id,
+                                title,
+                                date,
+                                address,
+                                description,
+                                image,
+                            },
+                        })
+                    }
+                >
+                    Details
+                </Button>
             </Card.Actions>
         </Card>
     ) : (
