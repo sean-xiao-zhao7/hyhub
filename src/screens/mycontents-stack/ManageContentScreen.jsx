@@ -35,7 +35,7 @@ const ManageContentScreen = (props) => {
                             size={32}
                             color={colors.mainColor}
                         />
-                        <Text style={{ fontSize: 20 }}>Manage</Text>
+                        <Text style={{ fontSize: 20 }}>Manage Content</Text>
                     </View>
                     <Button
                         mode="contained"

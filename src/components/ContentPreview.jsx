@@ -25,8 +25,6 @@ const ContentPreview = ({ id, title, date, address, description, padding }) => {
                 title={title}
                 titleStyle={{
                     fontSize: 20,
-                    color: colors.mainColorFont,
-                    marginBottom: 10,
                 }}
                 titleNumberOfLines={2}
             />

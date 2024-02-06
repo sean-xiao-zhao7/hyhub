@@ -1,19 +1,19 @@
 import { useState } from "react";
-
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Text, TextInput } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
+import * as ImagePicker from "expo-image-picker";
 import { useDispatch } from "react-redux";
-import { addContentAction } from "../../redux/slices/myContentsSlice";
 
+// customs
+import { addContentAction } from "../../redux/slices/myContentsSlice";
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
-
 import MyDivider from "../../components/MyDivder";
 
 const AddContentScreen = ({ navigation }) => {
+    const [image, setImage] = useState(null);
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState("");
@@ -31,6 +31,20 @@ const AddContentScreen = ({ navigation }) => {
             })
         );
         navigation.goBack();
+    };
+
+    const addImage = async () => {
+        // No permissions request is necessary for launching the image library
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            // aspect: [4, 3],
+            quality: 1,
+        });
+
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
     };
 
     return (
@@ -91,8 +105,19 @@ const AddContentScreen = ({ navigation }) => {
                     />
                     <MyDivider />
                     <MyDivider />
-                    <Button mode="contained" onPress={() => addContent()}>
-                        Add
+                    {image ? (
+                        <Image
+                            source={{ uri: image }}
+                            style={{ height: 300, marginBottom: 10 }}
+                        />
+                    ) : null}
+                    <Button mode="contained" onPress={addImage}>
+                        {image ? "Re-add Image" : "Add Image"}
+                    </Button>
+                    <MyDivider />
+                    <MyDivider />
+                    <Button mode="contained" onPress={addContent}>
+                        Submit new content
                     </Button>
                 </View>
             </ScrollView>
