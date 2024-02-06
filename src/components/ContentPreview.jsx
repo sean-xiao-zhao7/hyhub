@@ -28,16 +28,17 @@ const ContentPreview = ({
             mode="contained"
             style={{
                 borderRadius: 0,
-                borderBottomWidth: 2,
+                borderBottomWidth: 3,
                 borderBottomColor: colors.backgroundColorGrayLight,
                 paddingBottom: 10,
+                paddingTop: 5,
             }}
         >
-            <View style={{ padding: 10 }}>
+            <View style={{ padding: 10, alignItems: "center" }}>
                 <Text
                     style={{
                         fontSize: 22,
-                        fontWeight: 500,
+                        fontWeight: 600,
                         color: colors.mainColorDark,
                     }}
                 >
@@ -57,11 +58,14 @@ const ContentPreview = ({
                 {description ? (
                     <Text
                         style={{
-                            fontSize: 16,
-                            maxHeight: 100,
-                            marginTop: 5,
+                            fontSize: 18,
+                            maxHeight: 120,
+                            marginTop: 10,
                             color: colors.lighterBlack,
                             lineHeight: 25,
+                            paddingHorizontal: 10,
+                            paddingVertical: 5,
+                            maxWidth: "98%",
                         }}
                     >
                         {description}
