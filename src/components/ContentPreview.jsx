@@ -39,7 +39,6 @@ const ContentPreview = ({
                         fontSize: 20,
                         fontWeight: 600,
                         color: colors.mainColorDark,
-                        marginTop: 5,
                     }}
                 >
                     {title}
@@ -47,9 +46,9 @@ const ContentPreview = ({
                 {description ? (
                     <Text
                         style={{
-                            fontSize: 18,
+                            fontSize: 16,
                             maxHeight: 100,
-                            marginTop: 10,
+                            marginTop: 5,
                             color: colors.lighterBlack,
                             lineHeight: 25,
                         }}
@@ -172,8 +171,8 @@ const ContentPreview = ({
                             }}
                         >
                             <MaterialCommunityIcons
-                                name="map-marker"
-                                size={22}
+                                name="map"
+                                size={20}
                                 color={colors.lightGray}
                                 style={{ paddingRight: 5 }}
                             />
@@ -182,6 +181,8 @@ const ContentPreview = ({
                                 style={{
                                     fontSize: 16,
                                     color: colors.darkerGray,
+                                    textAlign: "center",
+                                    width: "95%",
                                 }}
                             >
                                 {address}
@@ -197,8 +198,8 @@ const ContentPreview = ({
                             }}
                         >
                             <MaterialCommunityIcons
-                                name="clock"
-                                size={22}
+                                name="clock-outline"
+                                size={20}
                                 color={colors.lightGray}
                                 style={{ paddingRight: 5 }}
                             />
@@ -206,6 +207,8 @@ const ContentPreview = ({
                                 style={{
                                     fontSize: 16,
                                     color: colors.darkerGray,
+                                    textAlign: "center",
+                                    width: "95%",
                                 }}
                             >
                                 {date}
