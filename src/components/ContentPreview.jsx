@@ -1,6 +1,9 @@
+import { View } from "react-native";
 import { Card, Text, Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+// customs
 import colors from "../styles/colors";
 
 const ContentPreview = ({
@@ -36,25 +39,55 @@ const ContentPreview = ({
                 }}
                 titleNumberOfLines={2}
             />
-            <Card.Content style={{ marginBottom: 15, marginTop: 0 }}>
-                {description ? (
-                    <Text style={{ fontSize: 16, maxHeight: 80 }}>
+            {description ? (
+                <Card.Content>
+                    <Text
+                        style={{
+                            fontSize: 16,
+                            maxHeight: 80,
+                            marginBottom: 10,
+                        }}
+                    >
                         {description}
                     </Text>
-                ) : (
-                    ""
-                )}
-            </Card.Content>
+                </Card.Content>
+            ) : null}
+
             <Card.Cover
                 source={{ uri: image }}
                 style={{ borderRadius: 0, height: 350 }}
             />
-            <Card.Content style={{ marginTop: 15 }}>
-                {date ? <Text style={{ fontSize: 16 }}>{date}</Text> : ""}
-            </Card.Content>
-            <Card.Content style={{ marginTop: 15 }}>
-                {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
-            </Card.Content>
+            {address ? (
+                <Card.Content style={{ marginTop: 15 }}>
+                    <View
+                        style={{ alignItems: "center", flexDirection: "row" }}
+                    >
+                        <MaterialCommunityIcons
+                            name="map-marker"
+                            size={26}
+                            color={colors.mainColor}
+                            style={{ paddingRight: 5 }}
+                        />
+
+                        <Text style={{ fontSize: 16 }}>{address}</Text>
+                    </View>
+                </Card.Content>
+            ) : null}
+            {date ? (
+                <Card.Content>
+                    <View
+                        style={{ alignItems: "center", flexDirection: "row" }}
+                    >
+                        <MaterialCommunityIcons
+                            name="clock"
+                            size={26}
+                            color={colors.mainColor}
+                            style={{ paddingRight: 5 }}
+                        />
+                        <Text style={{ fontSize: 16 }}>{date}</Text>
+                    </View>
+                </Card.Content>
+            ) : null}
             <Card.Actions>
                 <Button>Join</Button>
                 <Button>Details</Button>

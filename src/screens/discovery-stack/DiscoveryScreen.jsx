@@ -29,7 +29,10 @@ const DiscoveryScreen = () => {
                 backgroundColor: colors.mainColorLight,
             }}
         >
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ backgroundColor: "white" }}
+            >
                 <View
                     style={{
                         alignItems: "center",
