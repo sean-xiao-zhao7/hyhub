@@ -101,7 +101,7 @@ const ContentPreview = ({
                     style={{ paddingHorizontal: 10 }}
                 >
                     <MaterialCommunityIcons
-                        name="heart-outline"
+                        name="fire"
                         size={34}
                         color={colors.mainColorDark}
                         style={{ paddingRight: 5 }}
