@@ -23,6 +23,18 @@ const ContentPreview = ({
         });
     };
 
+    const goToDetails = () =>
+        navigation.navigate("ContentDetailsScreen", {
+            content: {
+                id,
+                title,
+                date,
+                address,
+                description,
+                image,
+            },
+        });
+
     return padding === "none" ? (
         <Card
             mode="contained"
@@ -62,25 +74,29 @@ const ContentPreview = ({
                     </Text>
                 </View>
                 {description ? (
-                    <Text
-                        style={{
-                            fontSize: 18,
-                            maxHeight: 120,
-                            marginTop: 5,
-                            color: colors.lighterBlack,
-                            lineHeight: 25,
-                            paddingBottom: 5,
-                            width: "95%",
-                        }}
-                    >
-                        {description}
-                    </Text>
+                    <TouchableRipple onPress={goToDetails}>
+                        <Text
+                            style={{
+                                fontSize: 18,
+                                maxHeight: 120,
+                                marginTop: 5,
+                                color: colors.lighterBlack,
+                                lineHeight: 25,
+                                paddingBottom: 5,
+                                // width: "95%",
+                            }}
+                        >
+                            {description}
+                        </Text>
+                    </TouchableRipple>
                 ) : null}
             </View>
-            <Card.Cover
-                source={{ uri: image }}
-                style={{ borderRadius: 0, height: 300 }}
-            />
+            <TouchableRipple onPress={goToDetails}>
+                <Card.Cover
+                    source={{ uri: image }}
+                    style={{ borderRadius: 0, height: 300 }}
+                />
+            </TouchableRipple>
             <View
                 style={{
                     flexDirection: "row",
@@ -91,18 +107,7 @@ const ContentPreview = ({
                 }}
             >
                 <TouchableRipple
-                    onPress={() =>
-                        navigation.navigate("ContentDetailsScreen", {
-                            content: {
-                                id,
-                                title,
-                                date,
-                                address,
-                                description,
-                                image,
-                            },
-                        })
-                    }
+                    onPress={goToDetails}
                     style={{ paddingHorizontal: 10 }}
                 >
                     <MaterialCommunityIcons
@@ -114,18 +119,7 @@ const ContentPreview = ({
                 </TouchableRipple>
                 <View style={{ flexDirection: "row" }}>
                     <TouchableRipple
-                        onPress={() =>
-                            navigation.navigate("ContentDetailsScreen", {
-                                content: {
-                                    id,
-                                    title,
-                                    date,
-                                    address,
-                                    description,
-                                    image,
-                                },
-                            })
-                        }
+                        onPress={goToDetails}
                         style={{ paddingHorizontal: 5 }}
                     >
                         <MaterialCommunityIcons
@@ -136,18 +130,7 @@ const ContentPreview = ({
                         />
                     </TouchableRipple>
                     <TouchableRipple
-                        onPress={() =>
-                            navigation.navigate("ContentDetailsScreen", {
-                                content: {
-                                    id,
-                                    title,
-                                    date,
-                                    address,
-                                    description,
-                                    image,
-                                },
-                            })
-                        }
+                        onPress={goToDetails}
                         style={{ paddingHorizontal: 5 }}
                     >
                         <MaterialCommunityIcons
@@ -158,18 +141,7 @@ const ContentPreview = ({
                         />
                     </TouchableRipple>
                     <TouchableRipple
-                        onPress={() =>
-                            navigation.navigate("ContentDetailsScreen", {
-                                content: {
-                                    id,
-                                    title,
-                                    date,
-                                    address,
-                                    description,
-                                    image,
-                                },
-                            })
-                        }
+                        onPress={goToDetails}
                         style={{ paddingHorizontal: 5 }}
                     >
                         <MaterialCommunityIcons
