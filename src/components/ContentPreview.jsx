@@ -43,7 +43,7 @@ const ContentPreview = ({
                 borderBottomWidth: 3,
                 borderBottomColor: colors.backgroundColorGrayLight,
                 paddingBottom: 10,
-                paddingTop: 5,
+                // paddingTop: 5,
             }}
         >
             <View
@@ -56,7 +56,7 @@ const ContentPreview = ({
                 <TouchableRipple onPress={goToDetails}>
                     <Text
                         style={{
-                            fontSize: 22,
+                            fontSize: 24,
                             fontWeight: 600,
                             color: colors.mainColorDark,
                         }}
@@ -67,9 +67,9 @@ const ContentPreview = ({
                 <View style={{ flexDirection: "row" }}>
                     <Text
                         style={{
-                            color: colors.mainColor,
+                            color: colors.mainColorLight,
                             marginTop: 5,
-                            fontSize: 16,
+                            fontSize: 14,
                         }}
                     >
                         Event
@@ -81,7 +81,7 @@ const ContentPreview = ({
                             style={{
                                 fontSize: 18,
                                 maxHeight: 120,
-                                marginTop: 5,
+                                marginTop: 10,
                                 color: colors.lighterBlack,
                                 lineHeight: 25,
                                 paddingBottom: 5,
@@ -176,7 +176,7 @@ const ContentPreview = ({
                                     fontSize: 16,
                                     color: colors.darkerGray,
                                     textAlign: "center",
-                                    width: "95%",
+                                    width: "90%",
                                 }}
                             >
                                 {address}
@@ -202,7 +202,7 @@ const ContentPreview = ({
                                     fontSize: 16,
                                     color: colors.darkerGray,
                                     textAlign: "center",
-                                    width: "95%",
+                                    width: "90%",
                                 }}
                             >
                                 {date}
@@ -218,10 +218,10 @@ const ContentPreview = ({
             style={{
                 backgroundColor: colors.backgroundColorGrayLight,
                 borderColor: colors.backgroundColorGray,
-                borderRadius: 0,
+                borderRadius: 10,
             }}
             contentStyle={{
-                paddingVertical: 5,
+                padding: 10,
             }}
         >
             <Card.Title
@@ -229,7 +229,7 @@ const ContentPreview = ({
                 titleStyle={{
                     fontSize: 20,
                     paddingVertical: 5,
-                    color: colors.mainColorFont,
+                    fontWeight: "500",
                 }}
                 titleNumberOfLines={2}
             />
@@ -238,8 +238,8 @@ const ContentPreview = ({
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             <Card.Actions>
+                {/* <Button>Save</Button> */}
                 <Button onPress={() => manageContent()}>Manage</Button>
-                <Button>Save</Button>
             </Card.Actions>
         </Card>
     );

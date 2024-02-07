@@ -71,7 +71,7 @@ const DiscoveryScreen = () => {
                                 fontWeight: 500,
                             }}
                         >
-                            Discover Gems
+                            Find Gems
                         </Text>
                     </View>
                     <View
