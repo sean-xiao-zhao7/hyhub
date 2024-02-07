@@ -68,6 +68,7 @@ const DiscoveryScreen = () => {
                                 fontSize: 20,
                                 color: "#fff",
                                 marginLeft: 5,
+                                fontWeight: 500,
                             }}
                         >
                             Discover Gems

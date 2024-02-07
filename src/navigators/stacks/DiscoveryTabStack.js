@@ -22,9 +22,13 @@ const DiscoveryTabStackNavigator = () => (
             component={ContentDetailsScreen}
             options={{
                 headerShown: true,
-                title: "Content Details",
-                headerTitleStyle: { color: "white", fontSize: 18 },
-                headerTintColor: 'white',
+                title: "Details",
+                headerTitleStyle: {
+                    color: "white",
+                    fontSize: 18,
+                    fontWeight: "normal",
+                },
+                headerTintColor: "white",
                 headerStyle: {
                     backgroundColor: colors.mainColor,
                 },
