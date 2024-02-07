@@ -34,7 +34,13 @@ const ContentPreview = ({
                 paddingTop: 5,
             }}
         >
-            <View style={{ padding: 10, alignItems: "center" }}>
+            <View
+                style={{
+                    padding: 10,
+                    paddingHorizontal: 20,
+                    alignItems: "left",
+                }}
+            >
                 <Text
                     style={{
                         fontSize: 22,
@@ -60,12 +66,11 @@ const ContentPreview = ({
                         style={{
                             fontSize: 18,
                             maxHeight: 120,
-                            marginTop: 10,
+                            marginTop: 5,
                             color: colors.lighterBlack,
                             lineHeight: 25,
-                            paddingHorizontal: 10,
-                            paddingVertical: 5,
-                            maxWidth: "98%",
+                            paddingBottom: 5,
+                            width: "95%",
                         }}
                     >
                         {description}
