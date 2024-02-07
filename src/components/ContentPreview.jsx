@@ -53,15 +53,17 @@ const ContentPreview = ({
                     alignItems: "left",
                 }}
             >
-                <Text
-                    style={{
-                        fontSize: 22,
-                        fontWeight: 600,
-                        color: colors.mainColorDark,
-                    }}
-                >
-                    {title}
-                </Text>
+                <TouchableRipple onPress={goToDetails}>
+                    <Text
+                        style={{
+                            fontSize: 22,
+                            fontWeight: 600,
+                            color: colors.mainColorDark,
+                        }}
+                    >
+                        {title}
+                    </Text>
+                </TouchableRipple>
                 <View style={{ flexDirection: "row" }}>
                     <Text
                         style={{

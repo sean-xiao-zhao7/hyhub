@@ -6,24 +6,41 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
-import ContentPreview from "../../components/ContentPreview";
-
-import { useSelector } from "react-redux";
 
 const ContentDetailsScreen = ({ route, navigation }) => {
     const { content } = route.params;
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
             <View style={{ padding: 5 }}>
-                <Text style={{ fontSize: 20, fontWeight: "500" }}>
+                <Text
+                    style={{
+                        fontSize: 24,
+                        fontWeight: "600",
+                        textAlign: "center",
+                        marginTop: 10,
+                        color: colors.lighterBlack,
+                    }}
+                >
                     {content.title}
                 </Text>
                 <MyDivider />
-                <Text style={{ fontSize: 18 }}>{content.description}</Text>
+                <Text style={{ textAlign: "center", color: colors.mainColor }}>
+                    Event
+                </Text>
+                <MyDivider />
+                <Text
+                    style={{
+                        fontSize: 20,
+                        marginTop: 5,
+                        paddingHorizontal: 10,
+                    }}
+                >
+                    {content.description}
+                </Text>
                 <MyDivider />
                 <View
                     style={{
-                        paddingVertical: 15,
+                        paddingVertical: 25,
                         paddingHorizontal: 10,
                         marginVertical: 10,
                         borderRadius: 5,
@@ -34,21 +51,24 @@ const ContentDetailsScreen = ({ route, navigation }) => {
                         style={{
                             alignItems: "center",
                             flexDirection: "row",
+                            width: "80%",
                         }}
                     >
                         <MaterialCommunityIcons
-                            name="clock"
+                            name="clock-outline"
                             size={24}
                             color={colors.mainColor}
                             style={{ paddingRight: 10 }}
                         />
-                        <Text style={{ fontSize: 18 }}>{content.date}</Text>
+                        <Text style={{ fontSize: 20 }}>{content.date}</Text>
                     </View>
+                    <MyDivider />
                     <MyDivider />
                     <View
                         style={{
                             alignItems: "center",
                             flexDirection: "row",
+                            width: "80%",
                         }}
                     >
                         <MaterialCommunityIcons
@@ -57,7 +77,7 @@ const ContentDetailsScreen = ({ route, navigation }) => {
                             color={colors.mainColor}
                             style={{ paddingRight: 10 }}
                         />
-                        <Text style={{ fontSize: 18 }}>{content.address}</Text>
+                        <Text style={{ fontSize: 20 }}>{content.address}</Text>
                     </View>
                     {/* <Text style={{ color: colors.mainColor }}>
                         ID: {content.id} (interal)
