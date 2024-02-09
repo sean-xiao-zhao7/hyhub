@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import MyContentsScreen from "../../screens/mycontents-stack/MyContentsScreen";
 import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
 import ManageContentScreen from "../../screens/mycontents-stack/ManageContentScreen";
-
+import UserContentsScreen from "../../screens/mycontents-stack/UserContentsScreen";
 import noHeaderOptions from "../options/noHeader";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const ManageContentsStackNavigator = createNativeStackNavigator();
 const UserContentsStackNavigator = createNativeStackNavigator();
@@ -32,8 +32,8 @@ const ManageStack = () => (
 const UserContentsStack = () => (
     <UserContentsStackNavigator.Navigator screenOptions={noHeaderOptions}>
         <UserContentsStackNavigator.Screen
-            name="MyContentsScreen"
-            component={MyContentsScreen}
+            name="UserContentsScreen"
+            component={UserContentsScreen}
         />
     </UserContentsStackNavigator.Navigator>
 );
@@ -43,12 +43,12 @@ const MyContentsTopTabs = () => {
         <SafeAreaView style={{ flex: 1 }}>
             <MyContentsTopTabsNavigator.Navigator>
                 <MyContentsTopTabsNavigator.Screen
-                    name="ManageStack"
-                    component={ManageStack}
-                />
-                <MyContentsTopTabsNavigator.Screen
                     name="UserContentsStack"
                     component={UserContentsStack}
+                />
+                <MyContentsTopTabsNavigator.Screen
+                    name="ManageStack"
+                    component={ManageStack}
                 />
             </MyContentsTopTabsNavigator.Navigator>
         </SafeAreaView>
