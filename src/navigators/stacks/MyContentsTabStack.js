@@ -1,6 +1,11 @@
+import { ScrollView, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import colors from "../../styles/colors";
+import { Text } from "react-native-paper";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import MyContentsScreen from "../../screens/mycontents-stack/MyContentsScreen";
 import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
@@ -40,15 +45,17 @@ const UserContentsStack = () => (
 
 const MyContentsTopTabs = () => {
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
             <MyContentsTopTabsNavigator.Navigator>
                 <MyContentsTopTabsNavigator.Screen
                     name="UserContentsStack"
                     component={UserContentsStack}
+                    options={{ tabBarLabel: "My Contents" }}
                 />
                 <MyContentsTopTabsNavigator.Screen
                     name="ManageStack"
                     component={ManageStack}
+                    options={{ tabBarLabel: "Manage" }}
                 />
             </MyContentsTopTabsNavigator.Navigator>
         </SafeAreaView>
