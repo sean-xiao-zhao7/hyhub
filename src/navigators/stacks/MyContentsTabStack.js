@@ -6,35 +6,52 @@ import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
 import ManageContentScreen from "../../screens/mycontents-stack/ManageContentScreen";
 
 import noHeaderOptions from "../options/noHeader";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const MyContentsTabStack = createNativeStackNavigator();
+const ManageContentsStackNavigator = createNativeStackNavigator();
+const UserContentsStackNavigator = createNativeStackNavigator();
 const MyContentsTopTabsNavigator = createMaterialTopTabNavigator();
 
-const ManageStackNavigator = () => (
-    <MyContentsTabStack.Navigator screenOptions={noHeaderOptions}>
-        <MyContentsTabStack.Screen
+const ManageStack = () => (
+    <ManageContentsStackNavigator.Navigator screenOptions={noHeaderOptions}>
+        <ManageContentsStackNavigator.Screen
             name="MyContentsScreen"
             component={MyContentsScreen}
         />
-        <MyContentsTabStack.Screen
+        <ManageContentsStackNavigator.Screen
             name="ManageContentScreen"
             component={ManageContentScreen}
         />
-        <MyContentsTabStack.Screen
+        <ManageContentsStackNavigator.Screen
             name="AddContentScreen"
             component={AddContentScreen}
         />
-    </MyContentsTabStack.Navigator>
+    </ManageContentsStackNavigator.Navigator>
+);
+
+const UserContentsStack = () => (
+    <UserContentsStackNavigator.Navigator screenOptions={noHeaderOptions}>
+        <UserContentsStackNavigator.Screen
+            name="MyContentsScreen"
+            component={MyContentsScreen}
+        />
+    </UserContentsStackNavigator.Navigator>
 );
 
 const MyContentsTopTabs = () => {
     return (
-        <MyContentsTopTabsNavigator.Navigator>
-            <MyContentsTopTabsNavigator.Screen
-                name="ManageStackNavigator"
-                component={ManageStackNavigator}
-            />
-        </MyContentsTopTabsNavigator.Navigator>
+        <SafeAreaView style={{ flex: 1 }}>
+            <MyContentsTopTabsNavigator.Navigator>
+                <MyContentsTopTabsNavigator.Screen
+                    name="ManageStack"
+                    component={ManageStack}
+                />
+                <MyContentsTopTabsNavigator.Screen
+                    name="UserContentsStack"
+                    component={UserContentsStack}
+                />
+            </MyContentsTopTabsNavigator.Navigator>
+        </SafeAreaView>
     );
 };
 
