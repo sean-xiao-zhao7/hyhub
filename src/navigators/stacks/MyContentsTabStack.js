@@ -45,8 +45,24 @@ const UserContentsStack = () => (
 
 const MyContentsTopTabs = () => {
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-            <MyContentsTopTabsNavigator.Navigator>
+        <SafeAreaView style={{ flex: 1, backgroundColor: colors.mainColor }}>
+            <MyContentsTopTabsNavigator.Navigator
+                screenOptions={{
+                    tabBarStyle: {
+                        backgroundColor: colors.mainColor,
+                    },
+                    tabBarLabelStyle: {
+                        color: "white",
+                        fontWeight: "500",
+                        fontSize: 16,
+                        textTransform: "capitalize",
+                    },
+                    tabBarInactiveTintColor: {
+                        color: "white",
+                    },
+                    tabBarShowIcon: true,
+                }}
+            >
                 <MyContentsTopTabsNavigator.Screen
                     name="UserContentsStack"
                     component={UserContentsStack}
