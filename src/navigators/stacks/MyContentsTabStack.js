@@ -57,21 +57,54 @@ const MyContentsTopTabs = () => {
                         fontSize: 16,
                         textTransform: "capitalize",
                     },
+                    tabBarActiveTintColor: {
+                        color: colors.mainColorFont,
+                    },
                     tabBarInactiveTintColor: {
                         color: "white",
                     },
+                    tabBarIndicatorStyle: {
+                        backgroundColor: "yellow",
+                    },
                     tabBarShowIcon: true,
+                    tabBarItemStyle: {
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    },
+                    tabBarContentContainerStyle: {
+                        padding: 0,
+                        margin: 0,
+                    },
                 }}
             >
                 <MyContentsTopTabsNavigator.Screen
                     name="UserContentsStack"
                     component={UserContentsStack}
-                    options={{ tabBarLabel: "My Contents" }}
+                    options={{
+                        tabBarLabel: "Saved",
+                        tabBarIcon: () => (
+                            <MaterialCommunityIcons
+                                name="bookmark-multiple-outline"
+                                size={20}
+                                color={"white"}
+                            />
+                        ),
+                    }}
                 />
                 <MyContentsTopTabsNavigator.Screen
                     name="ManageStack"
                     component={ManageStack}
-                    options={{ tabBarLabel: "Manage" }}
+                    options={{
+                        tabBarLabel: "Manage",
+                        tabBarIcon: () => (
+                            <MaterialCommunityIcons
+                                name="newspaper-variant-outline"
+                                size={20}
+                                color={"white"}
+                            />
+                        ),
+                    }}
                 />
             </MyContentsTopTabsNavigator.Navigator>
         </SafeAreaView>

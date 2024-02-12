@@ -58,7 +58,7 @@ const ContentPreview = ({
                         style={{
                             fontSize: 24,
                             fontWeight: 600,
-                            color: colors.mainColorDark,
+                            color: colors.lighterBlack,
                         }}
                     >
                         {title}

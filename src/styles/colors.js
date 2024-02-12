@@ -3,7 +3,6 @@ const colors = {
     mainColorLight: "#ff7402",
     mainColorVeryLight: "#ffc494",
     mainColorFont: "#d04a00",
-    mainColorDark: "#424040",
     secondColor: "#00328b", // blue
     secondColorDark: "#001741",
     backgroundColor: "white", // white
