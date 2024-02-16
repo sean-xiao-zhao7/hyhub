@@ -33,6 +33,7 @@ const MyContentsScreen = ({ navigation }) => {
                                 address={classContent.address}
                                 description={classContent.description}
                                 image={classContent.image}
+                                heart={classContent.heart}
                             />
                         </View>
                     );

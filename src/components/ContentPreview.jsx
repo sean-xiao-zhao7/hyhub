@@ -14,12 +14,13 @@ const ContentPreview = ({
     address,
     description,
     image,
+    heart,
     padding,
 }) => {
     const navigation = useNavigation();
     const manageContent = () => {
         navigation.navigate("ManageContentScreen", {
-            content: { id, title, date, address, description, image },
+            content: { id, title, date, address, description, image, heart },
         });
     };
 
@@ -32,6 +33,7 @@ const ContentPreview = ({
                 address,
                 description,
                 image,
+                heart,
             },
         });
 

@@ -99,6 +99,7 @@ const DiscoveryScreen = () => {
                                     address={classContent.address}
                                     description={classContent.description}
                                     image={classContent.image}
+                                    heart={classContent.heart}
                                     padding={"none"}
                                 />
                                 <MyDivider />

@@ -13,6 +13,7 @@ export const addContentAction = createAsyncThunk(
                 address: newContentInput.address,
                 description: newContentInput.description,
                 image: newContentInput.image,
+                heart: false,
             };
             const newContents = [...state.myContents.contents, newContent];
 
@@ -61,7 +62,7 @@ export const deleteContentAction = createAsyncThunk(
 
 export const heartContentAction = createAsyncThunk(
     "content/heartContentAction",
-    async (id, heartVal, { getState }) => {
+    async ({ id, heartVal }, { getState }) => {
         try {
             const state = getState();
             let newContents = [...state.myContents.contents];

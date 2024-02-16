@@ -1,29 +1,26 @@
 import { useEffect, useState } from "react";
-import { View, ScrollView, Image, TouchableOpacity } from "react-native";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Text } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
+
+import { View, ScrollView, Image, TouchableOpacity } from "react-native";
+import { Text } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
+
 import { heartContentAction } from "../../redux/slices/myContentsSlice";
 
 const ContentDetailsScreen = ({ route }) => {
-    const { content } = route.params;
     const dispatch = useDispatch();
+    const content = route.params.content;
     const [heart, setHeart] = useState(content.heart);
 
     const toggleHeartHandler = () => {
-        if (heart) {
-            dispatch(heartContentAction(content.id, false));
-            setHeart(false);
-        } else {
-            dispatch(heartContentAction(content.id, true));
-            setHeart(true);
-        }
+        dispatch(heartContentAction({ id: content.id, heartVal: !heart }));
+        setHeart(!heart);
     };
 
     const nav = useNavigation();
