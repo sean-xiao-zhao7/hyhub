@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text } from "react-native-paper";
@@ -9,22 +9,20 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
-import {
-    heartContentAction,
-    unheartContentAction,
-} from "../../redux/slices/myContentsSlice";
+import { heartContentAction } from "../../redux/slices/myContentsSlice";
 
 const ContentDetailsScreen = ({ route }) => {
     const { content } = route.params;
     const dispatch = useDispatch();
-
-    console.log(content.heart);
+    const [heart, setHeart] = useState(content.heart);
 
     const toggleHeartHandler = () => {
-        if (content.heart) {
-            dispatch(unheartContentAction(content.id));
+        if (heart) {
+            dispatch(heartContentAction(content.id, false));
+            setHeart(false);
         } else {
-            dispatch(heartContentAction(content.id));
+            dispatch(heartContentAction(content.id, true));
+            setHeart(true);
         }
     };
 
@@ -35,7 +33,7 @@ const ContentDetailsScreen = ({ route }) => {
                 return (
                     <TouchableOpacity onPress={toggleHeartHandler}>
                         <MaterialCommunityIcons
-                            name="heart-outline"
+                            name={heart ? "heart" : "heart-outline"}
                             size={30}
                             color={"#fff"}
                         />
@@ -43,7 +41,7 @@ const ContentDetailsScreen = ({ route }) => {
                 );
             },
         });
-    }, [toggleHeartHandler]);
+    }, [heart]);
 
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
