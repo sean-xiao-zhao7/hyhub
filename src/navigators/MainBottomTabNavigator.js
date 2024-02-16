@@ -1,5 +1,6 @@
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Text } from "react-native-paper";
 
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
@@ -33,6 +34,17 @@ export default function MainBottomTabNavigator() {
                             size={32}
                         />
                     ),
+                    tabBarLabel: (
+                        <Text
+                            style={{
+                                fontSize: 14,
+                                textAlign: "center",
+                                fontWeight: 500,
+                            }}
+                        >
+                            Discover
+                        </Text>
+                    ),
                 }}
             />
             <MainBottomTabNav.Screen
@@ -46,6 +58,17 @@ export default function MainBottomTabNavigator() {
                             color={color}
                             size={32}
                         />
+                    ),
+                    tabBarLabel: (
+                        <Text
+                            style={{
+                                fontSize: 14,
+                                textAlign: "center",
+                                fontWeight: 500,
+                            }}
+                        >
+                            My Contents
+                        </Text>
                     ),
                 }}
             />

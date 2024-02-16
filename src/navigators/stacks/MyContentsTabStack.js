@@ -85,7 +85,7 @@ const MyContentsTopTabs = () => {
                         tabBarLabel: "Saved",
                         tabBarIcon: () => (
                             <MaterialCommunityIcons
-                                name="bookmark-multiple-outline"
+                                name="diamond"
                                 size={20}
                                 color={"white"}
                             />
@@ -99,7 +99,7 @@ const MyContentsTopTabs = () => {
                         tabBarLabel: "Manage",
                         tabBarIcon: () => (
                             <MaterialCommunityIcons
-                                name="newspaper-variant-outline"
+                                name="star-circle"
                                 size={20}
                                 color={"white"}
                             />
