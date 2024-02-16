@@ -58,6 +58,50 @@ export const deleteContentAction = createAsyncThunk(
     }
 );
 
+export const heartContentAction = createAsyncThunk(
+    "content/heartContentAction",
+    async (id, { getState }) => {
+        const state = getState();
+        let newContents = state.myContents.contents;
+        const targetIndex = newContents.findIndex(
+            (content) => content.id === id
+        );
+        newContents.splice(targetIndex, 1, {
+            ...newContents[targetIndex],
+            heart: true,
+        });
+        try {
+            const jsonContents = JSON.stringify(newContents);
+            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
+            return newContents;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+);
+
+export const unheartContentAction = createAsyncThunk(
+    "content/unheartContentAction",
+    async (id, { getState }) => {
+        const state = getState();
+        let newContents = state.myContents.contents;
+        const targetIndex = newContents.findIndex(
+            (content) => content.id === id
+        );
+        newContents.splice(targetIndex, 1, {
+            ...newContents[targetIndex],
+            heart: false,
+        });
+        try {
+            const jsonContents = JSON.stringify(newContents);
+            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
+            return newContents;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+);
+
 const myContentsSlice = createSlice({
     name: "myContents",
     initialState: {
@@ -72,6 +116,12 @@ const myContentsSlice = createSlice({
                 state.contents = action.payload;
             })
             .addCase(deleteContentAction.fulfilled, (state, action) => {
+                state.contents = action.payload;
+            })
+            .addCase(heartContentAction.fulfilled, (state, action) => {
+                state.contents = action.payload;
+            })
+            .addCase(unheartContentAction.fulfilled, (state, action) => {
                 state.contents = action.payload;
             });
     },
