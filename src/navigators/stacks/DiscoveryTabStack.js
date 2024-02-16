@@ -1,67 +1,48 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Text } from "react-native-paper";
 
 import DiscoveryScreen from "../../screens/discovery-stack/DiscoveryScreen";
 import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
 import noHeaderOptions from "../options/noHeader";
 import colors from "../../styles/colors";
-import { Text } from "react-native-paper";
 
 const DiscoveryTabStack = createNativeStackNavigator();
 
-const DiscoveryTabStackNavigator = () => (
-    <DiscoveryTabStack.Navigator
-        screenOptions={{
-            ...noHeaderOptions,
-        }}
-    >
-        <DiscoveryTabStack.Screen
-            name="DiscoveryScreen"
-            component={DiscoveryScreen}
-        />
-        <DiscoveryTabStack.Screen
-            name="ContentDetailsScreen"
-            component={ContentDetailsScreen}
-            options={{
-                headerShown: true,
-                headerTitle: () => (
-                    <Text
-                        style={{
-                            fontSize: 20,
-                            color: "white",
-                            fontWeight: 600,
-                        }}
-                    >
-                        Details
-                    </Text>
-                ),
-                headerTintColor: "white",
-                headerStyle: {
-                    backgroundColor: colors.mainColor,
-                },
-                headerRight: () => {
-                    return (
-                        <MaterialCommunityIcons
-                            name="heart-outline"
-                            size={30}
-                            color={"#fff"}
-                        />
-                    );
-                },
+const DiscoveryTabStackNavigator = () => {
+    return (
+        <DiscoveryTabStack.Navigator
+            screenOptions={{
+                ...noHeaderOptions,
             }}
-        />
-        {/* <rootStack.Screen
-            name="Auth"
-            component={AuthScreen}
-            options={{
-                headerShown: false,
-                cardStyle: {
-                    backgroundColor: "white",
-                    paddingHorizontal: 20,
-                },
-            }}
-        /> */}
-    </DiscoveryTabStack.Navigator>
-);
+        >
+            <DiscoveryTabStack.Screen
+                name="DiscoveryScreen"
+                component={DiscoveryScreen}
+            />
+            <DiscoveryTabStack.Screen
+                name="ContentDetailsScreen"
+                component={ContentDetailsScreen}
+                options={{
+                    headerShown: true,
+                    headerTitle: () => (
+                        <Text
+                            style={{
+                                fontSize: 20,
+                                color: "white",
+                                fontWeight: 600,
+                            }}
+                        >
+                            Details
+                        </Text>
+                    ),
+                    headerTintColor: "white",
+                    headerStyle: {
+                        backgroundColor: colors.mainColor,
+                    },
+                }}
+            />
+        </DiscoveryTabStack.Navigator>
+    );
+};
 
 export default DiscoveryTabStackNavigator;

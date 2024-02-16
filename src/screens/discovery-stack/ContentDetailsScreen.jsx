@@ -1,14 +1,50 @@
-import { View, ScrollView, Image } from "react-native";
+import { useEffect } from "react";
+import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Button, Text } from "react-native-paper";
+import { Text } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
+import {
+    heartContentAction,
+    unheartContentAction,
+} from "../../redux/slices/myContentsSlice";
 
-const ContentDetailsScreen = ({ route, navigation }) => {
+const ContentDetailsScreen = ({ route }) => {
     const { content } = route.params;
+    const dispatch = useDispatch();
+
+    console.log(content.heart);
+
+    const toggleHeartHandler = () => {
+        if (content.heart) {
+            dispatch(unheartContentAction(content.id));
+        } else {
+            dispatch(heartContentAction(content.id));
+        }
+    };
+
+    const nav = useNavigation();
+    useEffect(() => {
+        nav.setOptions({
+            headerRight: () => {
+                return (
+                    <TouchableOpacity onPress={toggleHeartHandler}>
+                        <MaterialCommunityIcons
+                            name="heart-outline"
+                            size={30}
+                            color={"#fff"}
+                        />
+                    </TouchableOpacity>
+                );
+            },
+        });
+    }, [toggleHeartHandler]);
+
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
             <View style={{ padding: 5 }}>
