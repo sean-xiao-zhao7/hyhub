@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import DiscoveryScreen from "../../screens/discovery-stack/DiscoveryScreen";
 import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
@@ -31,6 +32,15 @@ const DiscoveryTabStackNavigator = () => (
                 headerTintColor: "white",
                 headerStyle: {
                     backgroundColor: colors.mainColor,
+                },
+                headerRight: () => {
+                    return (
+                        <MaterialCommunityIcons
+                            name="heart-outline"
+                            size={30}
+                            color={"#fff"}
+                        />
+                    );
                 },
             }}
         />

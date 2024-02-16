@@ -1,10 +1,7 @@
 import { View, ScrollView } from "react-native";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Button, Text } from "react-native-paper";
+import { Button } from "react-native-paper";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
-import colors from "../../styles/colors";
-
 import MyDivider from "../../components/MyDivder";
 import ContentPreview from "../../components/ContentPreview";
 
@@ -17,17 +14,6 @@ const MyContentsScreen = ({ navigation }) => {
 
     return (
         <ScrollView contentContainerStyle={mainScreenStyle}>
-            <View style={{ alignItems: "center", flexDirection: "row" }}>
-                <MaterialCommunityIcons
-                    name="diamond"
-                    size={30}
-                    color={colors.mainColor}
-                />
-                <Text style={{ fontSize: 20, paddingLeft: 5 }}>
-                    Manage Contents
-                </Text>
-            </View>
-            <MyDivider />
             <Button
                 icon="plus"
                 mode="contained"
