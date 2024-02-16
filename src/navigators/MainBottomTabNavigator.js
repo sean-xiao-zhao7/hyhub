@@ -37,9 +37,10 @@ export default function MainBottomTabNavigator() {
                     tabBarLabel: (
                         <Text
                             style={{
-                                fontSize: 14,
+                                fontSize: 13,
                                 textAlign: "center",
                                 fontWeight: 500,
+                                color: colors.lighterBlack,
                             }}
                         >
                             Discover
@@ -62,9 +63,10 @@ export default function MainBottomTabNavigator() {
                     tabBarLabel: (
                         <Text
                             style={{
-                                fontSize: 14,
+                                fontSize: 13,
                                 textAlign: "center",
                                 fontWeight: 500,
+                                color: colors.lighterBlack,
                             }}
                         >
                             My Contents

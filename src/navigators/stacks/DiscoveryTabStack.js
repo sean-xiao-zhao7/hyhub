@@ -5,6 +5,7 @@ import DiscoveryScreen from "../../screens/discovery-stack/DiscoveryScreen";
 import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
 import noHeaderOptions from "../options/noHeader";
 import colors from "../../styles/colors";
+import { Text } from "react-native-paper";
 
 const DiscoveryTabStack = createNativeStackNavigator();
 
@@ -23,12 +24,17 @@ const DiscoveryTabStackNavigator = () => (
             component={ContentDetailsScreen}
             options={{
                 headerShown: true,
-                title: "Details",
-                headerTitleStyle: {
-                    color: "white",
-                    fontSize: 18,
-                    fontWeight: "normal",
-                },
+                headerTitle: () => (
+                    <Text
+                        style={{
+                            fontSize: 20,
+                            color: "white",
+                            fontWeight: 600,
+                        }}
+                    >
+                        Details
+                    </Text>
+                ),
                 headerTintColor: "white",
                 headerStyle: {
                     backgroundColor: colors.mainColor,
