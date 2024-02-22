@@ -90,21 +90,24 @@ const DiscoveryScreen = () => {
                 </View>
                 <View style={{ backgroundColor: "white" }}>
                     {contents.map((classContent) => {
-                        return (
-                            <View key={classContent.id}>
-                                <ContentPreview
-                                    id={classContent.id}
-                                    title={classContent.title}
-                                    date={classContent.date}
-                                    address={classContent.address}
-                                    description={classContent.description}
-                                    image={classContent.image}
-                                    heart={classContent.heart}
-                                    padding={"none"}
-                                />
-                                <MyDivider />
-                            </View>
-                        );
+                        // console.log(classContent.id, classContent.title);
+                        if (classContent.id) {
+                            return (
+                                <View key={classContent.id}>
+                                    <ContentPreview
+                                        id={classContent.id}
+                                        title={classContent.title}
+                                        date={classContent.date}
+                                        address={classContent.address}
+                                        description={classContent.description}
+                                        image={classContent.image}
+                                        heart={classContent.heart}
+                                        padding={"none"}
+                                    />
+                                    <MyDivider />
+                                </View>
+                            );
+                        }
                     })}
                 </View>
             </ScrollView>
