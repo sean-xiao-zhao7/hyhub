@@ -11,7 +11,10 @@ import colors from "../../styles/colors";
 
 import MyDivider from "../../components/MyDivder";
 
-import { userAddContentAction } from "../../redux/slices/userContentsSlice";
+import {
+    userAddContentAction,
+    userDeleteContentAction,
+} from "../../redux/slices/userContentsSlice";
 
 const ContentDetailsScreen = ({ route }) => {
     const dispatch = useDispatch();
@@ -19,7 +22,11 @@ const ContentDetailsScreen = ({ route }) => {
     const [heart, setHeart] = useState(content.heart);
 
     const toggleHeartHandler = () => {
-        dispatch(userAddContentAction({ id: content.id, heartVal: !heart }));
+        if (heart) {
+            dispatch(userDeleteContentAction({ id: content.id }));
+        } else {
+            dispatch(userAddContentAction({ content: content }));
+        }
         setHeart(!heart);
     };
 

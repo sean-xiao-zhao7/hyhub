@@ -7,7 +7,7 @@ const AccountScreen = () => {
     return (
         <SafeAreaView>
             <View style={mainScreenStyle}>
-                <Text>MyContents Screen</Text>
+                <Text>Account Screen</Text>
             </View>
         </SafeAreaView>
     );

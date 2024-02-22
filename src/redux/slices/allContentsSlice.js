@@ -15,7 +15,7 @@ export const addContentAction = createAsyncThunk(
                 image: newContentInput.image,
                 heart: false,
             };
-            const newContents = [...state.myContents.contents, newContent];
+            const newContents = [...state.allContents.contents, newContent];
 
             const jsonContents = JSON.stringify(newContents);
             await AsyncStorage.setItem("fire-gem-contents", jsonContents);
@@ -47,7 +47,7 @@ export const deleteContentAction = createAsyncThunk(
     async (id, { getState }) => {
         try {
             const state = getState();
-            const newContents = state.myContents.contents.filter(
+            const newContents = state.allContents.contents.filter(
                 (content) => content.id !== id
             );
 
@@ -65,7 +65,7 @@ export const heartContentAction = createAsyncThunk(
     async ({ id, heartVal }, { getState }) => {
         try {
             const state = getState();
-            let newContents = [...state.myContents.contents];
+            let newContents = [...state.allContents.contents];
             const targetIndex = newContents.findIndex(
                 (content) => content.id === id
             );

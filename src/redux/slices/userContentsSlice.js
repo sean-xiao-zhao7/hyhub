@@ -6,20 +6,14 @@ export const userAddContentAction = createAsyncThunk(
     async (newContentInput, { getState }) => {
         const state = getState();
         try {
-            const newContent = {
-                id: new Date().toISOString(true),
-                title: newContentInput.title,
-                date: newContentInput.date,
-                address: newContentInput.address,
-                description: newContentInput.description,
-                image: newContentInput.image,
-                heart: false,
-            };
-            const newContents = [...state.myContents.contents, newContent];
+            const newUserContents = [
+                ...state.userContents.contents,
+                newContentInput,
+            ];
 
-            const jsonContents = JSON.stringify(newContents);
-            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
-            return newContents;
+            const jsonContents = JSON.stringify(newUserContents);
+            await AsyncStorage.setItem("fire-gem-user-contents", jsonContents);
+            return newUserContents;
         } catch (err) {
             console.log(err);
         }
@@ -31,7 +25,7 @@ export const userLoadContentsAction = createAsyncThunk(
     async () => {
         try {
             const asyncStorageContents = await AsyncStorage.getItem(
-                "fire-gem-contents"
+                "fire-gem-user-contents"
             );
             if (asyncStorageContents) {
                 return JSON.parse(asyncStorageContents);
@@ -47,13 +41,13 @@ export const userDeleteContentAction = createAsyncThunk(
     async (id, { getState }) => {
         try {
             const state = getState();
-            const newContents = state.myContents.contents.filter(
+            const newUserContents = state.userContents.contents.filter(
                 (content) => content.id !== id
             );
 
-            const jsonContents = JSON.stringify(newContents);
-            await AsyncStorage.setItem("fire-gem-contents", jsonContents);
-            return newContents;
+            const jsonContents = JSON.stringify(newUserContents);
+            await AsyncStorage.setItem("fire-gem-user-contents", jsonContents);
+            return newUserContents;
         } catch (err) {
             console.log(err);
         }
