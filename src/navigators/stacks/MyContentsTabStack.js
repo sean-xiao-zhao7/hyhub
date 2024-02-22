@@ -1,15 +1,13 @@
-import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from "../../styles/colors";
-import { Text } from "react-native-paper";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import MyContentsScreen from "../../screens/mycontents-stack/MyContentsScreen";
+import ManageContentsScreen from "../../screens/mycontents-stack/ManageContentsScreen";
 import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
-import ManageContentScreen from "../../screens/mycontents-stack/ManageContentScreen";
+import ManageSingleContentScreen from "../../screens/mycontents-stack/ManageSingleContentScreen";
 import UserContentsScreen from "../../screens/mycontents-stack/UserContentsScreen";
 import noHeaderOptions from "../options/noHeader";
 
@@ -20,12 +18,12 @@ const MyContentsTopTabsNavigator = createMaterialTopTabNavigator();
 const ManageStack = () => (
     <ManageContentsStackNavigator.Navigator screenOptions={noHeaderOptions}>
         <ManageContentsStackNavigator.Screen
-            name="MyContentsScreen"
-            component={MyContentsScreen}
+            name="ManageContentsScreen"
+            component={ManageContentsScreen}
         />
         <ManageContentsStackNavigator.Screen
-            name="ManageContentScreen"
-            component={ManageContentScreen}
+            name="ManageSingleContentScreen"
+            component={ManageSingleContentScreen}
         />
         <ManageContentsStackNavigator.Screen
             name="AddContentScreen"

@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 
-const MyContentsScreen = () => {
+const AccountScreen = () => {
     return (
         <SafeAreaView>
             <View style={mainScreenStyle}>
@@ -13,4 +13,4 @@ const MyContentsScreen = () => {
     );
 };
 
-export default MyContentsScreen;
+export default AccountScreen;

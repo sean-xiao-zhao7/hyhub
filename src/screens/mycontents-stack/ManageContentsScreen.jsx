@@ -7,9 +7,9 @@ import ContentPreview from "../../components/ContentPreview";
 
 import { useSelector } from "react-redux";
 
-const MyContentsScreen = ({ navigation }) => {
+const ManageContentsScreen = ({ navigation }) => {
     const contents = useSelector((state) => {
-        return state.myContents.contents;
+        return state.allContents.contents;
     });
 
     return (
@@ -43,4 +43,4 @@ const MyContentsScreen = ({ navigation }) => {
     );
 };
 
-export default MyContentsScreen;
+export default ManageContentsScreen;

@@ -6,9 +6,9 @@ import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";
 import { useDispatch } from "react-redux";
-import { deleteContentAction } from "../../redux/slices/myContentsSlice";
+import { deleteContentAction } from "../../redux/slices/allContentsSlice";
 
-const ManageContentScreen = (props) => {
+const ManageSingleContentScreen = (props) => {
     const dispatch = useDispatch();
 
     const deleteContent = () => {
@@ -108,4 +108,4 @@ const ManageContentScreen = (props) => {
     );
 };
 
-export default ManageContentScreen;
+export default ManageSingleContentScreen;

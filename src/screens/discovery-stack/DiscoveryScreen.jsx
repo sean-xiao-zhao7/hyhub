@@ -9,13 +9,13 @@ import colors from "../../styles/colors";
 
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
-import { loadContentsAction } from "../../redux/slices/myContentsSlice";
+import { loadContentsAction } from "../../redux/slices/allContentsSlice";
 
 const DiscoveryScreen = () => {
     const dispatch = useDispatch();
 
     const contents = useSelector((state) => {
-        return state.myContents.contents;
+        return state.allContents.contents;
     });
 
     useEffect(() => {

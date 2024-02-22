@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import myContentsSlice from "./slices/myContentsSlice";
+import allContentsSlice from "./slices/allContentsSlice";
 
 const store = configureStore({
-    reducer: { myContents: myContentsSlice.reducer },
+    reducer: { allContents: allContentsSlice.reducer },
 });
 
 export default store;

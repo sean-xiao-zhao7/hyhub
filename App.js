@@ -8,7 +8,7 @@ import MainBottomTabNavigator from "./src/navigators/MainBottomTabNavigator";
 import colors from "./src/styles/colors";
 import store from "./src/redux/store";
 
-import { loadContentsAction } from "./src/redux/slices/myContentsSlice";
+import { loadContentsAction } from "./src/redux/slices/allContentsSlice";
 
 const theme = {
     ...DefaultTheme,

@@ -7,7 +7,7 @@ import * as ImagePicker from "expo-image-picker";
 import { useDispatch } from "react-redux";
 
 // customs
-import { addContentAction } from "../../redux/slices/myContentsSlice";
+import { addContentAction } from "../../redux/slices/allContentsSlice";
 import mainScreenStyle from "../styles/mainScreenStyle";
 import colors from "../../styles/colors";
 import MyDivider from "../../components/MyDivder";

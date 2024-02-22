@@ -19,7 +19,7 @@ const ContentPreview = ({
 }) => {
     const navigation = useNavigation();
     const manageContent = () => {
-        navigation.navigate("ManageContentScreen", {
+        navigation.navigate("ManageSingleContentScreen", {
             content: { id, title, date, address, description, image, heart },
         });
     };
