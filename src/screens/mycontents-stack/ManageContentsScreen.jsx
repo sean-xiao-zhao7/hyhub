@@ -18,6 +18,7 @@ const ManageContentsScreen = ({ navigation }) => {
                 icon="plus"
                 mode="contained"
                 onPress={() => navigation.navigate("AddContentScreen")}
+                labelStyle={{ fontSize: 16 }}
             >
                 Add your event, service, etc.
             </Button>
