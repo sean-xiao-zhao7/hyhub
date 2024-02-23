@@ -117,7 +117,7 @@ const ContentPreview = ({
                         <MaterialCommunityIcons
                             name="heart-outline"
                             size={34}
-                            color={colors.mainColorDark}
+                            color={colors.lighterBlack}
                             style={{ paddingRight: 5 }}
                         />
                     </TouchableRipple>
@@ -129,7 +129,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="share"
                                 size={34}
-                                color={colors.mainColorDark}
+                                color={colors.lighterBlack}
                                 style={{ paddingRight: 5 }}
                             />
                         </TouchableRipple>
@@ -140,7 +140,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="share-variant"
                                 size={34}
-                                color={colors.mainColorDark}
+                                color={colors.lighterBlack}
                                 style={{ paddingRight: 5 }}
                             />
                         </TouchableRipple>
@@ -151,7 +151,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="bookmark-outline"
                                 size={34}
-                                color={colors.mainColorDark}
+                                color={colors.lighterBlack}
                                 style={{ paddingRight: 5 }}
                             />
                         </TouchableRipple>
@@ -244,17 +244,6 @@ const ContentPreview = ({
                             {title}
                         </Text>
                     </TouchableRipple>
-                    <View style={{ flexDirection: "row" }}>
-                        <Text
-                            style={{
-                                color: colors.mainColorLight,
-                                marginTop: 5,
-                                fontSize: 14,
-                            }}
-                        >
-                            Event
-                        </Text>
-                    </View>
                     {description ? (
                         <TouchableRipple onPress={goToDetails}>
                             <Text
@@ -284,20 +273,9 @@ const ContentPreview = ({
                         paddingHorizontal: 5,
                         paddingVertical: 10,
                         alignItems: "center",
-                        justifyContent: "space-between",
+                        justifyContent: "flex-end",
                     }}
                 >
-                    <TouchableRipple
-                        onPress={goToDetails}
-                        style={{ paddingHorizontal: 10 }}
-                    >
-                        <MaterialCommunityIcons
-                            name="heart-outline"
-                            size={34}
-                            color={colors.mainColorDark}
-                            style={{ paddingRight: 5 }}
-                        />
-                    </TouchableRipple>
                     <View style={{ flexDirection: "row" }}>
                         <TouchableRipple
                             onPress={goToDetails}
@@ -306,7 +284,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="share"
                                 size={34}
-                                color={colors.mainColorDark}
+                                color={colors.lighterBlack}
                                 style={{ paddingRight: 5 }}
                             />
                         </TouchableRipple>
@@ -317,18 +295,7 @@ const ContentPreview = ({
                             <MaterialCommunityIcons
                                 name="share-variant"
                                 size={34}
-                                color={colors.mainColorDark}
-                                style={{ paddingRight: 5 }}
-                            />
-                        </TouchableRipple>
-                        <TouchableRipple
-                            onPress={goToDetails}
-                            style={{ paddingHorizontal: 5 }}
-                        >
-                            <MaterialCommunityIcons
-                                name="bookmark-outline"
-                                size={34}
-                                color={colors.mainColorDark}
+                                color={colors.lighterBlack}
                                 style={{ paddingRight: 5 }}
                             />
                         </TouchableRipple>
