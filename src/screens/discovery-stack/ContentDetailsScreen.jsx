@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
@@ -19,7 +19,20 @@ import {
 const ContentDetailsScreen = ({ route }) => {
     const dispatch = useDispatch();
     const content = route.params.content;
-    const [heart, setHeart] = useState(content.heart);
+    const [heart, setHeart] = useState(null);
+
+    const currentUserContents = useSelector(
+        (state) => state.userContents.contents
+    );
+
+    useEffect(() => {
+        const index = currentUserContents.findIndex((c) => c.id === content.id);
+        if (index) {
+            setHeart(true);
+        } else {
+            setHeart(false);
+        }
+    }, [currentUserContents]);
 
     const toggleHeartHandler = () => {
         if (heart) {

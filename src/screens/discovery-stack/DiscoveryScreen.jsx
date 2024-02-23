@@ -100,7 +100,6 @@ const DiscoveryScreen = () => {
                                         address={classContent.address}
                                         description={classContent.description}
                                         image={classContent.image}
-                                        heart={classContent.heart}
                                         type={"allUser"}
                                     />
                                     <MyDivider />
