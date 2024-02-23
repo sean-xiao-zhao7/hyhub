@@ -38,7 +38,7 @@ const ContentDetailsScreen = ({ route }) => {
                     <TouchableOpacity onPress={toggleHeartHandler}>
                         <MaterialCommunityIcons
                             name={heart ? "heart" : "heart-outline"}
-                            size={30}
+                            size={26}
                             color={"#fff"}
                         />
                     </TouchableOpacity>
@@ -55,7 +55,7 @@ const ContentDetailsScreen = ({ route }) => {
                         fontSize: 24,
                         fontWeight: "600",
                         textAlign: "center",
-                        marginTop: 10,
+                        marginTop: 5,
                         color: colors.lighterBlack,
                     }}
                 >

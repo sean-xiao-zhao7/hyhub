@@ -27,9 +27,9 @@ const DiscoveryTabStackNavigator = () => {
                     headerTitle: () => (
                         <Text
                             style={{
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: "white",
-                                fontWeight: 600,
+                                fontWeight: 500,
                             }}
                         >
                             Details
