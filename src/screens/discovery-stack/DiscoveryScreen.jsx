@@ -6,7 +6,6 @@ import { Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import colors from "../../styles/colors";
-
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
 import { loadContentsAction } from "../../redux/slices/allContentsSlice";
@@ -101,7 +100,7 @@ const DiscoveryScreen = () => {
                                         description={classContent.description}
                                         image={classContent.image}
                                         heart={classContent.heart}
-                                        padding={"none"}
+                                        type={"allUser"}
                                     />
                                     <MyDivider />
                                 </View>

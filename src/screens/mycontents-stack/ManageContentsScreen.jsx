@@ -34,6 +34,7 @@ const ManageContentsScreen = ({ navigation }) => {
                                 description={classContent.description}
                                 image={classContent.image}
                                 heart={classContent.heart}
+                                type={"manageContent"}
                             />
                         </View>
                     );
