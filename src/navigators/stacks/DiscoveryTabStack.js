@@ -3,7 +3,7 @@ import { Text } from "react-native-paper";
 
 import DiscoveryScreen from "../../screens/discovery-stack/DiscoveryScreen";
 import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
-import noHeaderOptions from "../options/noHeader";
+import noHeaderOptions from "../options/headerOptions";
 import colors from "../../styles/colors";
 
 const DiscoveryTabStack = createNativeStackNavigator();

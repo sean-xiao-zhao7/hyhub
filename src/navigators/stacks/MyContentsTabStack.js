@@ -9,7 +9,10 @@ import ManageContentsScreen from "../../screens/mycontents-stack/ManageContentsS
 import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
 import ManageSingleContentScreen from "../../screens/mycontents-stack/ManageSingleContentScreen";
 import UserContentsScreen from "../../screens/mycontents-stack/UserContentsScreen";
-import noHeaderOptions from "../options/noHeader";
+import UserContentDetailsScreen from "../../screens/mycontents-stack/UserContentDetailsScreen";
+import noHeaderOptions, {
+    modalWithHeaderOptions,
+} from "../options/headerOptions";
 
 const ManageContentsStackNavigator = createNativeStackNavigator();
 const UserContentsStackNavigator = createNativeStackNavigator();
@@ -33,10 +36,16 @@ const ManageStack = () => (
 );
 
 const UserContentsStack = () => (
-    <UserContentsStackNavigator.Navigator screenOptions={noHeaderOptions}>
+    <UserContentsStackNavigator.Navigator>
         <UserContentsStackNavigator.Screen
             name="UserContentsScreen"
             component={UserContentsScreen}
+            options={noHeaderOptions}
+        />
+        <UserContentsStackNavigator.Screen
+            name="UserContentDetailsScreen"
+            component={UserContentDetailsScreen}
+            options={modalWithHeaderOptions}
         />
     </UserContentsStackNavigator.Navigator>
 );

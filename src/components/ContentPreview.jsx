@@ -18,14 +18,8 @@ const ContentPreview = ({
 }) => {
     const navigation = useNavigation();
 
-    const manageContent = () => {
-        navigation.navigate("ManageSingleContentScreen", {
-            content: { id, title, date, address, description, image, heart },
-        });
-    };
-
-    const goToDetails = () => {
-        navigation.navigate("ContentDetailsScreen", {
+    const goToDetails = (routeName) => {
+        navigation.navigate(routeName, {
             content: {
                 id,
                 title,
@@ -56,7 +50,9 @@ const ContentPreview = ({
                         alignItems: "left",
                     }}
                 >
-                    <TouchableRipple onPress={goToDetails}>
+                    <TouchableRipple
+                        onPress={() => goToDetails("ContentDetailsScreen")}
+                    >
                         <Text
                             style={{
                                 fontSize: 24,
@@ -79,7 +75,9 @@ const ContentPreview = ({
                         </Text>
                     </View>
                     {description ? (
-                        <TouchableRipple onPress={goToDetails}>
+                        <TouchableRipple
+                            onPress={() => goToDetails("ContentDetailsScreen")}
+                        >
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -95,7 +93,9 @@ const ContentPreview = ({
                         </TouchableRipple>
                     ) : null}
                 </View>
-                <TouchableRipple onPress={goToDetails}>
+                <TouchableRipple
+                    onPress={() => goToDetails("ContentDetailsScreen")}
+                >
                     <Card.Cover
                         source={{ uri: image }}
                         style={{ borderRadius: 0, height: 300 }}
@@ -233,7 +233,9 @@ const ContentPreview = ({
                         alignItems: "left",
                     }}
                 >
-                    <TouchableRipple onPress={goToDetails}>
+                    <TouchableRipple
+                        onPress={() => goToDetails("UserContentDetailsScreen")}
+                    >
                         <Text
                             style={{
                                 fontSize: 24,
@@ -245,7 +247,11 @@ const ContentPreview = ({
                         </Text>
                     </TouchableRipple>
                     {description ? (
-                        <TouchableRipple onPress={goToDetails}>
+                        <TouchableRipple
+                            onPress={() =>
+                                goToDetails("UserContentDetailsScreen")
+                            }
+                        >
                             <Text
                                 style={{
                                     fontSize: 18,
@@ -261,7 +267,9 @@ const ContentPreview = ({
                         </TouchableRipple>
                     ) : null}
                 </View>
-                <TouchableRipple onPress={goToDetails}>
+                <TouchableRipple
+                    onPress={() => goToDetails("UserContentDetailsScreen")}
+                >
                     <Card.Cover
                         source={{ uri: image }}
                         style={{ borderRadius: 0, height: 300 }}
@@ -390,7 +398,11 @@ const ContentPreview = ({
                     )}
                 </Card.Content>
                 <Card.Actions>
-                    <Button onPress={() => manageContent()}>Manage</Button>
+                    <Button
+                        onPress={() => goToDetails("ManageSingleContentScreen")}
+                    >
+                        Manage
+                    </Button>
                 </Card.Actions>
             </Card>
         );

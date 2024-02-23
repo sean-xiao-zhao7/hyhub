@@ -4,7 +4,7 @@ import { Text } from "react-native-paper";
 
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
-import noHeaderOptions from "./options/noHeader";
+import noHeaderOptions from "./options/headerOptions";
 import colors from "../styles/colors";
 
 const MainBottomTabNav = createMaterialBottomTabNavigator();
