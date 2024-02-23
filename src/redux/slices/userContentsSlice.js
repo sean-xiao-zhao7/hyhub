@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const userAddContentAction = createAsyncThunk(
-    "content/useAddContentAction",
+    "content/userAddContentAction",
     async (newContentInput, { getState }) => {
         const state = getState();
         try {
@@ -57,7 +57,7 @@ export const userDeleteContentAction = createAsyncThunk(
 const userContentsSlice = createSlice({
     name: "userContents",
     initialState: {
-        userContents: [],
+        contents: [],
     },
     extraReducers: (builder) => {
         builder
