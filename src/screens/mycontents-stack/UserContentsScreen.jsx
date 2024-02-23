@@ -1,12 +1,18 @@
 import { ScrollView, View } from "react-native";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Text } from "react-native-paper";
 
-import mainScreenStyle from "../styles/mainScreenStyle";
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
+import { userLoadContentsAction } from "../../redux/slices/userContentsSlice";
 
 const UserContentsScreen = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(userLoadContentsAction());
+    }, []);
+
     const userContents = useSelector((state) => state.userContents.contents);
 
     return (
