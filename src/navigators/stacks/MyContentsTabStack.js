@@ -42,11 +42,6 @@ const UserContentsStack = () => (
             component={UserContentsScreen}
             options={noHeaderOptions}
         />
-        <UserContentsStackNavigator.Screen
-            name="UserContentDetailsScreen"
-            component={UserContentDetailsScreen}
-            options={modalWithHeaderOptions}
-        />
     </UserContentsStackNavigator.Navigator>
 );
 

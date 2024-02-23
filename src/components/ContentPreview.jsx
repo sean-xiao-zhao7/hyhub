@@ -234,7 +234,7 @@ const ContentPreview = ({
                     }}
                 >
                     <TouchableRipple
-                        onPress={() => goToDetails("UserContentDetailsScreen")}
+                        onPress={() => goToDetails("ContentDetailsScreen")}
                     >
                         <Text
                             style={{
@@ -248,9 +248,7 @@ const ContentPreview = ({
                     </TouchableRipple>
                     {description ? (
                         <TouchableRipple
-                            onPress={() =>
-                                goToDetails("UserContentDetailsScreen")
-                            }
+                            onPress={() => goToDetails("ContentDetailsScreen")}
                         >
                             <Text
                                 style={{
@@ -268,7 +266,7 @@ const ContentPreview = ({
                     ) : null}
                 </View>
                 <TouchableRipple
-                    onPress={() => goToDetails("UserContentDetailsScreen")}
+                    onPress={() => goToDetails("ContentDetailsScreen")}
                 >
                     <Card.Cover
                         source={{ uri: image }}
