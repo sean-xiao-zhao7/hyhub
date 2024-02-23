@@ -37,6 +37,7 @@ const DiscoveryScreen = () => {
                         alignItems: "center",
                         flexDirection: "row",
                         paddingBottom: 10,
+                        paddingTop: 5,
                         paddingHorizontal: 10,
                         justifyContent: "space-between",
                         backgroundColor: colors.mainColor,
@@ -64,7 +65,7 @@ const DiscoveryScreen = () => {
                     >
                         <Text
                             style={{
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: "#fff",
                                 marginLeft: 5,
                                 fontWeight: 500,
