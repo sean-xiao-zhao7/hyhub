@@ -90,7 +90,6 @@ const DiscoveryScreen = () => {
                 </View>
                 <View style={{ backgroundColor: "white" }}>
                     {contents.map((classContent) => {
-                        // console.log(classContent.id, classContent.title);
                         if (classContent.id) {
                             return (
                                 <View key={classContent.id}>

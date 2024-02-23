@@ -1,9 +1,10 @@
 import { ScrollView, View } from "react-native";
 import { useSelector } from "react-redux";
+import { Text } from "react-native-paper";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
 import ContentPreview from "../../components/ContentPreview";
-import { Text } from "react-native-paper";
+import MyDivider from "../../components/MyDivder";
 
 const UserContentsScreen = () => {
     const userContents = useSelector((state) => state.userContents.contents);
@@ -29,7 +30,7 @@ const UserContentsScreen = () => {
                                 description={singleContent.description}
                                 image={singleContent.image}
                                 heart={singleContent.heart}
-                                padding={"none"}
+                                type={"userContent"}
                             />
                             <MyDivider />
                         </View>

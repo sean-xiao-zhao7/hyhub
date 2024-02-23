@@ -45,7 +45,6 @@ const ContentPreview = ({
                 borderBottomWidth: 3,
                 borderBottomColor: colors.backgroundColorGrayLight,
                 paddingBottom: 10,
-                // paddingTop: 5,
             }}
         >
             <View
@@ -240,7 +239,6 @@ const ContentPreview = ({
                 {address ? <Text style={{ fontSize: 16 }}>{address}</Text> : ""}
             </Card.Content>
             <Card.Actions>
-                {/* <Button>Save</Button> */}
                 <Button onPress={() => manageContent()}>Manage</Button>
             </Card.Actions>
         </Card>

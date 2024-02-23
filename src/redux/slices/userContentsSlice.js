@@ -8,7 +8,7 @@ export const userAddContentAction = createAsyncThunk(
         try {
             const newUserContents = [
                 ...state.userContents.contents,
-                newContentInput,
+                { ...newContentInput.content },
             ];
 
             const jsonContents = JSON.stringify(newUserContents);

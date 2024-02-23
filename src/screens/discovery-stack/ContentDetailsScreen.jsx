@@ -117,9 +117,6 @@ const ContentDetailsScreen = ({ route }) => {
                         />
                         <Text style={{ fontSize: 20 }}>{content.address}</Text>
                     </View>
-                    {/* <Text style={{ color: colors.mainColor }}>
-                        ID: {content.id} (interal)
-                    </Text> */}
                 </View>
                 <MyDivider />
                 <Image
