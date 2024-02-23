@@ -51,7 +51,184 @@ const ContentPreview = ({
             >
                 <View
                     style={{
-                        padding: 10,
+                        padding: 15,
+                        paddingHorizontal: 20,
+                        alignItems: "left",
+                    }}
+                >
+                    <TouchableRipple onPress={goToDetails}>
+                        <Text
+                            style={{
+                                fontSize: 24,
+                                fontWeight: 600,
+                                color: colors.lighterBlack,
+                            }}
+                        >
+                            {title}
+                        </Text>
+                    </TouchableRipple>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text
+                            style={{
+                                color: colors.mainColorLight,
+                                marginTop: 5,
+                                fontSize: 14,
+                            }}
+                        >
+                            Event
+                        </Text>
+                    </View>
+                    {description ? (
+                        <TouchableRipple onPress={goToDetails}>
+                            <Text
+                                style={{
+                                    fontSize: 18,
+                                    maxHeight: 120,
+                                    marginTop: 10,
+                                    color: colors.lighterBlack,
+                                    lineHeight: 25,
+                                    paddingBottom: 5,
+                                }}
+                            >
+                                {description}
+                            </Text>
+                        </TouchableRipple>
+                    ) : null}
+                </View>
+                <TouchableRipple onPress={goToDetails}>
+                    <Card.Cover
+                        source={{ uri: image }}
+                        style={{ borderRadius: 0, height: 300 }}
+                    />
+                </TouchableRipple>
+                <View
+                    style={{
+                        flexDirection: "row",
+                        paddingHorizontal: 5,
+                        paddingVertical: 10,
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                    }}
+                >
+                    <TouchableRipple
+                        onPress={goToDetails}
+                        style={{ paddingHorizontal: 10 }}
+                    >
+                        <MaterialCommunityIcons
+                            name="heart-outline"
+                            size={34}
+                            color={colors.mainColorDark}
+                            style={{ paddingRight: 5 }}
+                        />
+                    </TouchableRipple>
+                    <View style={{ flexDirection: "row" }}>
+                        <TouchableRipple
+                            onPress={goToDetails}
+                            style={{ paddingHorizontal: 5 }}
+                        >
+                            <MaterialCommunityIcons
+                                name="share"
+                                size={34}
+                                color={colors.mainColorDark}
+                                style={{ paddingRight: 5 }}
+                            />
+                        </TouchableRipple>
+                        <TouchableRipple
+                            onPress={goToDetails}
+                            style={{ paddingHorizontal: 5 }}
+                        >
+                            <MaterialCommunityIcons
+                                name="share-variant"
+                                size={34}
+                                color={colors.mainColorDark}
+                                style={{ paddingRight: 5 }}
+                            />
+                        </TouchableRipple>
+                        <TouchableRipple
+                            onPress={goToDetails}
+                            style={{ paddingHorizontal: 5 }}
+                        >
+                            <MaterialCommunityIcons
+                                name="bookmark-outline"
+                                size={34}
+                                color={colors.mainColorDark}
+                                style={{ paddingRight: 5 }}
+                            />
+                        </TouchableRipple>
+                    </View>
+                </View>
+                {address && date ? (
+                    <View style={{ padding: 10 }}>
+                        {address ? (
+                            <View
+                                style={{
+                                    alignItems: "center",
+                                    flexDirection: "row",
+                                }}
+                            >
+                                <MaterialCommunityIcons
+                                    name="map"
+                                    size={20}
+                                    color={colors.mainColorVeryLight}
+                                    style={{ paddingRight: 5 }}
+                                />
+
+                                <Text
+                                    style={{
+                                        fontSize: 16,
+                                        color: colors.darkerGray,
+                                        textAlign: "center",
+                                        width: "90%",
+                                    }}
+                                >
+                                    {address}
+                                </Text>
+                            </View>
+                        ) : null}
+                        {address && date ? <MyDivider /> : null}
+                        {date ? (
+                            <View
+                                style={{
+                                    alignItems: "center",
+                                    flexDirection: "row",
+                                }}
+                            >
+                                <MaterialCommunityIcons
+                                    name="clock-outline"
+                                    size={20}
+                                    color={colors.mainColorVeryLight}
+                                    style={{ paddingRight: 5 }}
+                                />
+                                <Text
+                                    style={{
+                                        fontSize: 16,
+                                        color: colors.darkerGray,
+                                        textAlign: "center",
+                                        width: "90%",
+                                    }}
+                                >
+                                    {date}
+                                </Text>
+                            </View>
+                        ) : null}
+                    </View>
+                ) : null}
+            </Card>
+        );
+    } else if (type === "singleUser") {
+        return (
+            <Card
+                mode="contained"
+                style={{
+                    borderRadius: 0,
+                    borderBottomWidth: 3,
+                    borderBottomColor: colors.backgroundColorGrayLight,
+                    paddingBottom: 10,
+                }}
+            >
+                <View
+                    style={{
+                        paddingVertical: 15,
                         paddingHorizontal: 20,
                         alignItems: "left",
                     }}

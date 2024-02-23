@@ -10,7 +10,7 @@ const UserContentsScreen = () => {
     const userContents = useSelector((state) => state.userContents.contents);
 
     return (
-        <ScrollView contentContainerStyle={mainScreenStyle}>
+        <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
             {!userContents || userContents.length <= 0 ? (
                 <Text
                     style={{ textAlign: "center", marginTop: 20, fontSize: 16 }}
@@ -30,7 +30,7 @@ const UserContentsScreen = () => {
                                 description={singleContent.description}
                                 image={singleContent.image}
                                 heart={singleContent.heart}
-                                type={"userContent"}
+                                type={"singleUser"}
                             />
                             <MyDivider />
                         </View>
