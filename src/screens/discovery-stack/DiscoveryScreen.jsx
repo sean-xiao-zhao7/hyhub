@@ -8,6 +8,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import colors from "../../styles/colors";
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
+import { userLoadContentsAction } from "../../redux/slices/userContentsSlice";
 import { loadContentsAction } from "../../redux/slices/allContentsSlice";
 
 const DiscoveryScreen = () => {
@@ -19,6 +20,7 @@ const DiscoveryScreen = () => {
 
     useEffect(() => {
         dispatch(loadContentsAction());
+        dispatch(userLoadContentsAction());
     }, []);
 
     return (
