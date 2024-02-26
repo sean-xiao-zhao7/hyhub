@@ -1,4 +1,5 @@
 import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text } from "react-native-paper";
 
@@ -7,20 +8,27 @@ import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
 import noHeaderOptions from "./options/headerOptions";
 import colors from "../styles/colors";
 
-const MainBottomTabNav = createMaterialBottomTabNavigator();
+const MainBottomTabNav = createBottomTabNavigator();
 
 export default function MainBottomTabNavigator() {
     return (
         <MainBottomTabNav.Navigator
-            screenOptions={noHeaderOptions}
-            activeColor={colors.mainColor}
-            inactiveColor={colors.secondColor}
-            barStyle={{
-                backgroundColor: colors.backgroundColor,
-                marginTop: -40,
-                borderTopWidth: 1,
-                borderTopColor: colors.backgroundColorGrayLight,
+            screenOptions={{
+                ...noHeaderOptions,
+                tabBarStyle: {
+                    height: 90,
+                    paddingTop: 10,
+                    position: "absolute",
+                },
+                tabBarItemStyle: {},
+                tabBarLabelStyle: {
+                    fontSize: 14,
+                    fontWeight: 500,
+                },
+                tabBarActiveTintColor: colors.mainColor,
+                tabBarInactiveTintColor: colors.darkerGray,
             }}
+            sceneContainerStyle={{ backgroundColor: "red" }}
         >
             <MainBottomTabNav.Screen
                 name="DiscoveryTabStackNavigator"
@@ -34,43 +42,19 @@ export default function MainBottomTabNavigator() {
                             size={32}
                         />
                     ),
-                    tabBarLabel: (
-                        <Text
-                            style={{
-                                fontSize: 13,
-                                textAlign: "center",
-                                fontWeight: 500,
-                                color: colors.lighterBlack,
-                            }}
-                        >
-                            Discover
-                        </Text>
-                    ),
                 }}
             />
             <MainBottomTabNav.Screen
                 name="MyContentsTabStackNavigator"
                 component={MyContentsTabStackNavigator}
                 options={{
-                    title: "My Contents",
+                    title: "Gems",
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
                             name="diamond"
                             color={color}
                             size={32}
                         />
-                    ),
-                    tabBarLabel: (
-                        <Text
-                            style={{
-                                fontSize: 13,
-                                textAlign: "center",
-                                fontWeight: 500,
-                                color: colors.lighterBlack,
-                            }}
-                        >
-                            My Contents
-                        </Text>
                     ),
                 }}
             />

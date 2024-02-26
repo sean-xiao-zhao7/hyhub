@@ -102,7 +102,7 @@ const MyContentsTopTabs = () => {
                     name="UserContentsStack"
                     component={UserContentsStack}
                     options={{
-                        tabBarLabel: "Saved",
+                        tabBarLabel: "Gems",
                         tabBarIcon: () => (
                             <MaterialCommunityIcons
                                 name="diamond"
