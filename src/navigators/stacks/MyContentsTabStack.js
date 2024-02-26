@@ -1,6 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Text } from "react-native-paper";
+import { View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import colors from "../../styles/colors";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
@@ -9,7 +10,10 @@ import ManageContentsScreen from "../../screens/mycontents-stack/ManageContentsS
 import AddContentScreen from "../../screens/mycontents-stack/AddContentScreen";
 import ManageSingleContentScreen from "../../screens/mycontents-stack/ManageSingleContentScreen";
 import UserContentsScreen from "../../screens/mycontents-stack/UserContentsScreen";
+import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
+
 import noHeaderOptions from "../options/headerOptions";
+import colors from "../../styles/colors";
 
 const ManageContentsStackNavigator = createNativeStackNavigator();
 const UserContentsStackNavigator = createNativeStackNavigator();
@@ -38,6 +42,23 @@ const UserContentsStack = () => (
             name="UserContentsScreen"
             component={UserContentsScreen}
             options={noHeaderOptions}
+        />
+        <UserContentsStackNavigator.Screen
+            name="ContentDetailsScreen"
+            component={ContentDetailsScreen}
+            options={{
+                headerShown: true,
+                title: "Details",
+                headerTitleStyle: {
+                    fontSize: 16,
+                    color: "white",
+                    fontWeight: 400,
+                },
+                headerTintColor: "white",
+                headerStyle: {
+                    backgroundColor: colors.mainColor,
+                },
+            }}
         />
     </UserContentsStackNavigator.Navigator>
 );
