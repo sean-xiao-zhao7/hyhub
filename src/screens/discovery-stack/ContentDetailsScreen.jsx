@@ -27,7 +27,7 @@ const ContentDetailsScreen = ({ route }) => {
 
     useEffect(() => {
         const index = currentUserContents.findIndex((c) => c.id === content.id);
-        if (index) {
+        if (index >= 0) {
             setHeart(true);
         } else {
             setHeart(false);

@@ -4,7 +4,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export const userAddContentAction = createAsyncThunk(
     "content/userAddContentAction",
     async ({ content }, { getState }) => {
-        console.log("Adding ${id}");
         const state = getState();
         try {
             const newUserContents = [
@@ -41,9 +40,7 @@ export const userDeleteContentAction = createAsyncThunk(
     "content/userDeleteContentAction",
     async ({ id }, { getState }) => {
         try {
-            console.log("Removing ${id}");
             const state = getState();
-            console.log(state.userContents);
             const newUserContents = state.userContents.contents.filter(
                 (content) => content.id !== id
             );
@@ -68,7 +65,6 @@ const userContentsSlice = createSlice({
                 state.contents = action.payload;
             })
             .addCase(userLoadContentsAction.fulfilled, (state, action) => {
-                console.log(action.payload);
                 state.contents = action.payload;
             })
             .addCase(userDeleteContentAction.fulfilled, (state, action) => {
