@@ -20,8 +20,8 @@ export default function MainBottomTabNavigator() {
                     position: "absolute",
                 },
                 tabBarLabelStyle: {
-                    fontSize: 14,
-                    fontWeight: 500,
+                    fontSize: 12,
+                    fontWeight: "500",
                 },
                 tabBarActiveTintColor: colors.mainColor,
                 tabBarInactiveTintColor: colors.darkerGray,

@@ -52,7 +52,7 @@ const UserContentsStack = () => (
                 headerTitleStyle: {
                     fontSize: 16,
                     color: "white",
-                    fontWeight: 400,
+                    fontWeight: "600",
                 },
                 headerTintColor: "white",
                 headerStyle: {
@@ -102,7 +102,7 @@ const MyContentsTopTabs = () => {
                     name="UserContentsStack"
                     component={UserContentsStack}
                     options={{
-                        tabBarLabel: "Gems",
+                        tabBarLabel: "Saved",
                         tabBarIcon: () => (
                             <MaterialCommunityIcons
                                 name="diamond"

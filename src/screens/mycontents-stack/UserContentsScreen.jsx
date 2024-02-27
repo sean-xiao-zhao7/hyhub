@@ -16,7 +16,7 @@ const UserContentsScreen = () => {
     const userContents = useSelector((state) => state.userContents.contents);
 
     return (
-        <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
+        <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
             {!userContents || userContents.length <= 0 ? (
                 <Text
                     style={{ textAlign: "center", marginTop: 20, fontSize: 16 }}

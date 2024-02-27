@@ -25,7 +25,10 @@ const DiscoveryScreen = () => {
     return (
         <ScrollView
             showsVerticalScrollIndicator={false}
-            contentContainerStyle={{ backgroundColor: "white" }}
+            contentContainerStyle={{
+                backgroundColor: "white",
+                paddingBottom: 100,
+            }}
         >
             <View style={{ backgroundColor: "white" }}>
                 {contents.map((classContent) => {
