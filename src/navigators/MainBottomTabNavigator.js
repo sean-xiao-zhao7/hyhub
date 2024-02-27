@@ -1,4 +1,3 @@
-import { createMaterialBottomTabNavigator } from "react-native-paper/react-navigation";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text } from "react-native-paper";
@@ -14,13 +13,12 @@ export default function MainBottomTabNavigator() {
     return (
         <MainBottomTabNav.Navigator
             screenOptions={{
-                ...noHeaderOptions,
+                headerShown: false,
                 tabBarStyle: {
                     height: 90,
                     paddingTop: 10,
                     position: "absolute",
                 },
-                tabBarItemStyle: {},
                 tabBarLabelStyle: {
                     fontSize: 14,
                     fontWeight: 500,
@@ -28,7 +26,6 @@ export default function MainBottomTabNavigator() {
                 tabBarActiveTintColor: colors.mainColor,
                 tabBarInactiveTintColor: colors.darkerGray,
             }}
-            sceneContainerStyle={{ backgroundColor: "red" }}
         >
             <MainBottomTabNav.Screen
                 name="DiscoveryTabStackNavigator"

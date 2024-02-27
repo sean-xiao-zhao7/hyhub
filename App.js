@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PaperProvider, DefaultTheme } from "react-native-paper";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 
 import MainBottomTabNavigator from "./src/navigators/MainBottomTabNavigator";
 import colors from "./src/styles/colors";
