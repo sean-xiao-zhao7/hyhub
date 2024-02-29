@@ -26,28 +26,13 @@ const UserStack = () => (
                     </TouchableOpacity>
                 ),
                 headerRight: (props) => (
-                    <View
-                        style={{
-                            alignItems: "center",
-                            flexDirection: "row",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Text
-                            style={{
-                                color: "white",
-                                fontSize: 18,
-                                fontWeight: "500",
-                            }}
-                        >
-                            Login
-                        </Text>
+                    <TouchableOpacity>
                         <MaterialCommunityIcons
                             name="login-variant"
-                            size={28}
+                            size={30}
                             color={"#fff"}
                         />
-                    </View>
+                    </TouchableOpacity>
                 ),
             }}
         />

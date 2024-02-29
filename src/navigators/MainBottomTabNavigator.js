@@ -62,7 +62,7 @@ export default function MainBottomTabNavigator() {
                     title: "Profile",
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
-                            name="account-circle-outline"
+                            name="account-box-multiple"
                             color={color}
                             size={30}
                         />
