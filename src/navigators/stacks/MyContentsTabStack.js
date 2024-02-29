@@ -1,6 +1,4 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text } from "react-native-paper";
-import { View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";

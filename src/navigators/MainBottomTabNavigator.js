@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Text } from "react-native-paper";
 
 import DiscoveryTabStackNavigator from "./stacks/DiscoveryTabStack";
 import MyContentsTabStackNavigator from "./stacks/MyContentsTabStack";
-import noHeaderOptions from "./options/headerOptions";
+import UserStack from "./stacks/UserTabStack";
+
 import colors from "../styles/colors";
 
 const MainBottomTabNav = createBottomTabNavigator();
@@ -36,7 +36,7 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="fire"
                             color={color}
-                            size={32}
+                            size={30}
                         />
                     ),
                 }}
@@ -50,7 +50,21 @@ export default function MainBottomTabNavigator() {
                         <MaterialCommunityIcons
                             name="diamond"
                             color={color}
-                            size={32}
+                            size={30}
+                        />
+                    ),
+                }}
+            />
+            <MainBottomTabNav.Screen
+                name="UserStack"
+                component={UserStack}
+                options={{
+                    title: "Account",
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons
+                            name="account-circle-outline"
+                            color={color}
+                            size={30}
                         />
                     ),
                 }}
