@@ -26,7 +26,7 @@ const DiscoveryTabStackNavigator = () => {
                             }}
                         >
                             <MaterialCommunityIcons
-                                name="filter-variant"
+                                name="menu"
                                 size={32}
                                 color={"#fff"}
                             />

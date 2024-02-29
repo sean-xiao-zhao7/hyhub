@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -16,6 +16,15 @@ const UserStack = () => (
             options={{
                 headerTitleAlign: "left",
                 title: "Profile",
+                headerLeft: (props) => (
+                    <TouchableOpacity>
+                        <MaterialCommunityIcons
+                            name="menu"
+                            size={30}
+                            color={"#fff"}
+                        />
+                    </TouchableOpacity>
+                ),
                 headerRight: (props) => (
                     <View
                         style={{
@@ -34,7 +43,7 @@ const UserStack = () => (
                             Login
                         </Text>
                         <MaterialCommunityIcons
-                            name="login"
+                            name="login-variant"
                             size={28}
                             color={"#fff"}
                         />

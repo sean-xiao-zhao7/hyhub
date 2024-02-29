@@ -46,6 +46,7 @@ const UserHomeScreen = () => {
                     buttonColor={colors.mainColor}
                     textColor="white"
                     mode="contained"
+                    icon="login-variant"
                 >
                     Login
                 </Button>
@@ -58,6 +59,7 @@ const UserHomeScreen = () => {
                     buttonColor={colors.mainColor}
                     textColor="white"
                     mode="contained"
+                    icon={"account"}
                 >
                     Sign up
                 </Button>
