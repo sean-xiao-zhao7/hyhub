@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { View, ScrollView } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { Text } from "react-native-paper";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import colors from "../../styles/colors";
 import ContentPreview from "../../components/ContentPreview";
 import MyDivider from "../../components/MyDivder";
 import { userLoadContentsAction } from "../../redux/slices/userContentsSlice";

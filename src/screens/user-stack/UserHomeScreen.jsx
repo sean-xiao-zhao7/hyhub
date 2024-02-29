@@ -1,11 +1,12 @@
 import { ScrollView, View } from "react-native";
 import { useState } from "react";
 import { Button, Text } from "react-native-paper";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import MyDivider from "../../components/MyDivder";
 
 import mainScreenStyle from "../styles/mainScreenStyle";
-import { h1 } from "../../styles/fonts";
+import { h1, h2 } from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 const UserHomeScreen = () => {
@@ -16,25 +17,50 @@ const UserHomeScreen = () => {
             <View
                 style={{
                     flex: 1,
-                    padding: 10,
                     justifyContent: "center",
-                    alignItems: "center",
+                    paddingBottom: 200,
+                    paddingHorizontal: 30,
                 }}
             >
-                <Text style={h1}>Join FireGem</Text>
                 <View
                     style={{
-                        backgroundColor: colors.backgroundColorGrayLight,
-                        padding: 10,
-                        borderRadius: 10,
+                        flexDirection: "row",
                         alignItems: "center",
-                        width: "100%",
                     }}
                 >
-                    <Button style={h1}>Login</Button>
-                    <MyDivider />
-                    <Button style={h1}>Sign up</Button>
+                    <MaterialCommunityIcons
+                        name={"fire"}
+                        size={36}
+                        color={colors.mainColor}
+                    />
+                    {/* <MyDivider direction={"horizontal"} /> */}
+                    <Text style={h1}>Join FireGem</Text>
                 </View>
+                <MyDivider />
+                <MyDivider />
+                <MyDivider />
+                <Button
+                    labelStyle={{ fontSize: 18 }}
+                    contentStyle={{ height: 50 }}
+                    style={{ borderRadius: 5 }}
+                    buttonColor={colors.mainColor}
+                    textColor="white"
+                    mode="contained"
+                >
+                    Login
+                </Button>
+                <MyDivider />
+                <MyDivider />
+                <Button
+                    labelStyle={{ fontSize: 18 }}
+                    contentStyle={{ height: 50 }}
+                    style={{ borderRadius: 5 }}
+                    buttonColor={colors.mainColor}
+                    textColor="white"
+                    mode="contained"
+                >
+                    Sign up
+                </Button>
             </View>
         );
     } else {
