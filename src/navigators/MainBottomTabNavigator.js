@@ -59,7 +59,7 @@ export default function MainBottomTabNavigator() {
                 name="UserStack"
                 component={UserStack}
                 options={{
-                    title: "Account",
+                    title: "Profile",
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
                             name="account-circle-outline"

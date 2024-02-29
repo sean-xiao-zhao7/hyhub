@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
+import { Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import UserHomeScreen from "../../screens/user-stack/UserHomeScreen";
@@ -14,7 +15,7 @@ const UserStack = () => (
             component={UserHomeScreen}
             options={{
                 headerTitleAlign: "left",
-                title: "Account",
+                title: "Profile",
                 headerRight: (props) => (
                     <View
                         style={{
@@ -23,9 +24,18 @@ const UserStack = () => (
                             justifyContent: "center",
                         }}
                     >
+                        <Text
+                            style={{
+                                color: "white",
+                                fontSize: 18,
+                                fontWeight: "500",
+                            }}
+                        >
+                            Login
+                        </Text>
                         <MaterialCommunityIcons
                             name="login"
-                            size={30}
+                            size={28}
                             color={"#fff"}
                         />
                     </View>
