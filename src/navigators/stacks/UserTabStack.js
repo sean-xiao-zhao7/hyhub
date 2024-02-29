@@ -1,11 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import UserHomeScreen from "../../screens/user-stack/UserHomeScreen";
+import { withHeaderOptions } from "../options/headerOptions";
 
 const UserStackNavigator = createNativeStackNavigator();
 
 const UserStack = () => (
-    <UserStackNavigator.Navigator>
+    <UserStackNavigator.Navigator screenOptions={withHeaderOptions}>
         <UserStackNavigator.Screen
             name="UserHomeScreen"
             component={UserHomeScreen}

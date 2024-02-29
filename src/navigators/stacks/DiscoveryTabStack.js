@@ -1,26 +1,17 @@
 import { View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import DiscoveryScreen from "../../screens/discovery-stack/DiscoveryScreen";
 import ContentDetailsScreen from "../../screens/discovery-stack/ContentDetailsScreen";
 import colors from "../../styles/colors";
+import { withHeaderOptions } from "../options/headerOptions";
 
 const DiscoveryTabStack = createNativeStackNavigator();
 
 const DiscoveryTabStackNavigator = () => {
     return (
-        <DiscoveryTabStack.Navigator
-            screenOptions={{
-                headerStyle: { backgroundColor: colors.mainColor },
-                headerTitleStyle: {
-                    color: "white",
-                    fontSize: 18,
-                    fontWeight: "500",
-                },
-            }}
-        >
+        <DiscoveryTabStack.Navigator screenOptions={withHeaderOptions}>
             <DiscoveryTabStack.Screen
                 name="DiscoveryScreen"
                 component={DiscoveryScreen}

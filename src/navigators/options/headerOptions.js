@@ -1,5 +1,6 @@
 import { Button } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import colors from "../../styles/colors";
 
 const noHeaderOptions = {
     headerShown: false,
@@ -9,6 +10,12 @@ const noHeaderOptions = {
 export const withHeaderOptions = {
     headerShown: true,
     contentStyle: { backgroundColor: "white" },
+    headerStyle: { backgroundColor: colors.mainColor },
+    headerTitleStyle: {
+        color: "white",
+        fontSize: 18,
+        fontWeight: "500",
+    },
 };
 
 export const modalWithHeaderOptions = {
